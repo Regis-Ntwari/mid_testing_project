@@ -8,6 +8,8 @@ package com.mid_testing_project.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
 /**
@@ -21,6 +23,8 @@ public class Prisoner extends Person implements Serializable{
     private String crime;
     @ManyToOne
     private Prison prison;
+    @Enumerated(EnumType.STRING)
+    private PrisonerStatus prisonerStatus;
 
     public Prisoner() {
     }
@@ -55,6 +59,14 @@ public class Prisoner extends Person implements Serializable{
 
     public void setPrison(Prison prison) {
         this.prison = prison;
+    }
+
+    public PrisonerStatus getPrisonerStatus() {
+        return prisonerStatus;
+    }
+
+    public void setPrisonerStatus(PrisonerStatus prisonerStatus) {
+        this.prisonerStatus = prisonerStatus;
     }
     
     

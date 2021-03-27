@@ -5,6 +5,7 @@
  */
 package com.mid_testing_project.dao;
 
+import com.mid_testing_project.domain.Prison;
 import com.mid_testing_project.domain.Prisoner;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -76,6 +77,18 @@ public class PrisonerDao implements RepositoryInterface<Prisoner>{
         Prisoner prisoner = session.get(Prisoner.class, id);
         session.close();
         return  prisoner;
+    }
+    
+    public Set<Prisoner> findAllPrisonersInPrison(Prison prison){
+        session = HibernateUtilities.getSessionFactory().openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Prisoner> query = builder.createQuery(Prisoner.class);
+        Root<Prisoner> root = query.from(Prisoner.class);
+        
+        query.select(root).where(builder.equal(root.get("prison"), prison));
+        Set<Prisoner> prisoners = new HashSet<>(session.createQuery(query).list());
+        session.close();
+        return prisoners;
     }
     
 }

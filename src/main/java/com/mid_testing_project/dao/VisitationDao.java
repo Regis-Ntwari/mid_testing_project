@@ -123,7 +123,7 @@ public class VisitationDao implements RepositoryInterface<Visitation> {
         
         root.fetch("prisoner", JoinType.LEFT);
         query.select(root).where(builder.and(builder.equal(root.get("prisoner").get("prison"), prison),
-                                                builder.equal(root.get("visitationDate"), LocalDate.now())));
+                                                builder.equal(root.get("visitationDate"), LocalDate.now()), builder.equal(root.get("requestStatus"), "APPROVED")));
         
         List<Visitation> visits = session.createQuery(query).getResultList();
         return new HashSet<>(visits);

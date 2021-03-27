@@ -38,4 +38,5 @@ public class AdminDao implements UserRepositoryInterface<Administrator>{
         return admin;
     }
     
+    
 }

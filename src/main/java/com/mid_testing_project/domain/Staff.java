@@ -28,6 +28,8 @@ public class Staff extends Person implements Serializable{
     private Prison prison;
     @Enumerated(EnumType.STRING)
     private StaffRole staffRole;
+    @Enumerated(EnumType.STRING)
+    private StaffWorkingStatus staffWorkingStatus;
 
     public Staff() {
     }
@@ -71,6 +73,13 @@ public class Staff extends Person implements Serializable{
     public void setStaffRole(StaffRole staffRole) {
         this.staffRole = staffRole;
     }
-    
+
+    public StaffWorkingStatus getStaffWorkingStatus() {
+        return staffWorkingStatus;
+    }
+
+    public void setStaffWorkingStatus(StaffWorkingStatus staffWorkingStatus) {
+        this.staffWorkingStatus = staffWorkingStatus;
+    }
     
 }
