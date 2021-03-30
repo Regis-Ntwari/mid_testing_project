@@ -26,7 +26,7 @@ public class Prison implements Serializable{
     private String id;
     private String name;
     @OneToMany(mappedBy = "prison")
-    private List<Staff> staff = new ArrayList<>();
+    private List<User> staff = new ArrayList<>();
     @OneToMany(mappedBy = "prison")
     private List<Prisoner> prisoners = new ArrayList<>();
 
@@ -49,11 +49,11 @@ public class Prison implements Serializable{
         this.name = name;
     }
 
-    public List<Staff> getStaff() {
+    public List<User> getStaff() {
         return staff;
     }
 
-    public void setStaff(List<Staff> staff) {
+    public void setStaff(List<User> staff) {
         this.staff = staff;
     }
 

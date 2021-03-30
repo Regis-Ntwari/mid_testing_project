@@ -5,6 +5,7 @@
  */
 package com.mid_testing_project.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -19,12 +20,12 @@ import org.hibernate.annotations.GenericGenerator;
  * @author regis
  */
 @Entity
-public class Visitation {
+public class Visitation implements Serializable {
+
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
-    @ManyToOne
     private Visitor visitor;
     @ManyToOne
     private Prisoner prisoner;
@@ -34,9 +35,6 @@ public class Visitation {
     private VisitationTime visitationTime;
     @Enumerated(EnumType.STRING)
     private VisitationOccurrenceStatus occurrenceStatus;
-    @Enumerated(EnumType.STRING)
-    private VisitationRequestStatus requestStatus;
-    
 
     public Visitation() {
     }
@@ -49,14 +47,6 @@ public class Visitation {
         this.occurrenceStatus = occurrenceStatus;
     }
 
-    public VisitationRequestStatus getRequestStatus() {
-        return requestStatus;
-    }
-
-    public void setRequestStatus(VisitationRequestStatus requestStatus) {
-        this.requestStatus = requestStatus;
-    }
-    
     public String getId() {
         return id;
     }
@@ -104,6 +94,5 @@ public class Visitation {
     public void setVisitationTime(VisitationTime visitationTime) {
         this.visitationTime = visitationTime;
     }
-    
-    
+
 }

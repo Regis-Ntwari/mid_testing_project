@@ -6,6 +6,9 @@
 package com.mid_testing_project.dao;
 
 import com.mid_testing_project.domain.VisitationTime;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -15,26 +18,29 @@ import org.hibernate.Session;
  *
  * @author regis
  */
-public class VisitationTimeDao {
+public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime>{
 
     private Session session;
 
-    public void save(VisitationTime prison) {
+    @Override
+    public void save(VisitationTime t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(prison);
+        session.save(t);
+        session.getTransaction().commit();
+        session.close();
+    }
+    
+    @Override
+    public void update(VisitationTime t) {
+        session = HibernateUtilities.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(t);
         session.getTransaction().commit();
         session.close();
     }
 
-    public void update(VisitationTime prison) {
-        session = HibernateUtilities.getSessionFactory().openSession();
-        session.beginTransaction();
-        session.update(prison);
-        session.getTransaction().commit();
-        session.close();
-    }
-
+    @Override
     public VisitationTime findById(String id) {
         session = HibernateUtilities.getSessionFactory().openSession();
         VisitationTime time = session.get(VisitationTime.class, id);
@@ -42,16 +48,42 @@ public class VisitationTimeDao {
         return time;
     }
 
-    public VisitationTime findInUseTime() {
+    @Override
+    public void delete(VisitationTime t) {
+        session = HibernateUtilities.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(t);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    @Override
+    public Set<VisitationTime> findAll() {
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
         Root<VisitationTime> root = query.from(VisitationTime.class);
-
-        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), "IN_USE"));
-
-        VisitationTime time = session.createQuery(query).uniqueResult();
+        
+        query.select(root);
+        
+        List<VisitationTime> allVisitationTimes = session.createQuery(query).getResultList();
         session.close();
-        return time;
+        return new HashSet<>(allVisitationTimes);
     }
+
+    @Override
+    public Set<VisitationTime> findAllInUseTime() {
+        session = HibernateUtilities.getSessionFactory().openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
+        Root<VisitationTime> root = query.from(VisitationTime.class);
+        
+        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), "IN_USE"));
+        
+        List<VisitationTime> allInUseTimes = session.createQuery(query).getResultList();
+        session.close();
+        return new HashSet<>(allInUseTimes);
+    }
+
+    
 }

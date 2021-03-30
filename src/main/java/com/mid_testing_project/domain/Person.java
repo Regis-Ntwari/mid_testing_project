@@ -6,11 +6,13 @@
 package com.mid_testing_project.domain;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -19,7 +21,7 @@ import org.hibernate.annotations.GenericGenerator;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Person implements Serializable{
+public abstract class Person implements Serializable{
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
@@ -70,6 +72,31 @@ public class Person implements Serializable{
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Person other = (Person) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
     
     

@@ -5,37 +5,50 @@
  */
 package com.mid_testing_project.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import java.io.Serializable;
+import javax.persistence.Embeddable;
 
 /**
  *
  * @author regis
  */
-@Entity
-public class Visitor extends Person{
-    @Column(nullable = false, unique = true)
-    private String username;
-    @Column(nullable = false)
-    private String password;
+@Embeddable
+public class Visitor implements Serializable{
+    private String visitorFirstName;
+    private String visitorLastName;
+    private String visitorPhoneNumber;
+    private String visitorEmail;
 
-    public Visitor() {
+    public String getVisitorFirstName() {
+        return visitorFirstName;
     }
 
-    public String getUsername() {
-        return username;
+    public void setVisitorFirstName(String visitorFirstName) {
+        this.visitorFirstName = visitorFirstName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getVisitorLastName() {
+        return visitorLastName;
     }
 
-    public String getPassword() {
-        return password;
+    public void setVisitorLastName(String visitorLastName) {
+        this.visitorLastName = visitorLastName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getVisitorPhoneNumber() {
+        return visitorPhoneNumber;
+    }
+
+    public void setVisitorPhoneNumber(String visitorPhoneNumber) {
+        this.visitorPhoneNumber = visitorPhoneNumber;
+    }
+
+    public String getVisitorEmail() {
+        return visitorEmail;
+    }
+
+    public void setVisitorEmail(String visitorEmail) {
+        this.visitorEmail = visitorEmail;
     }
     
     

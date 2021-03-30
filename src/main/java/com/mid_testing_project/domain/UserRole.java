@@ -9,6 +9,6 @@ package com.mid_testing_project.domain;
  *
  * @author regis
  */
-public enum VisitationRequestStatus {
-    PENDING,APPROVED,CANCELLED;
+public enum UserRole {
+    MANAGER, GUARD, ADMIN
 }

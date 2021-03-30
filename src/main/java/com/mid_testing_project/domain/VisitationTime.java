@@ -28,6 +28,7 @@ public class VisitationTime implements Serializable {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
     private String visitTime;
+    private String visitationDay;
     @OneToMany(mappedBy = "visitationTime")
     private List<Visitation> visits = new ArrayList<>();
     @Enumerated(EnumType.STRING)
@@ -65,4 +66,12 @@ public class VisitationTime implements Serializable {
         this.visitationTimeStatus = visitationTimeStatus;
     }
 
+    public String getVisitationDay() {
+        return visitationDay;
+    }
+
+    public void setVisitationDay(String visitationDay) {
+        this.visitationDay = visitationDay;
+    }
+    
 }

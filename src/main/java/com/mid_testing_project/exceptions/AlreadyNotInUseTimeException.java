@@ -9,9 +9,9 @@ package com.mid_testing_project.exceptions;
  *
  * @author regis
  */
-public class AlreadyCancelledVisitationException extends RuntimeException{
+public class AlreadyNotInUseTimeException extends RuntimeException{
 
-    public AlreadyCancelledVisitationException(String string) {
+    public AlreadyNotInUseTimeException(String string) {
         super(string);
     }
     

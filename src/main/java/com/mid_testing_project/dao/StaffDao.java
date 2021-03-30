@@ -5,7 +5,7 @@
  */
 package com.mid_testing_project.dao;
 
-import com.mid_testing_project.domain.Staff;
+import com.mid_testing_project.domain.User;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -21,12 +21,12 @@ import org.hibernate.query.Query;
  *
  * @author regis
  */
-public class StaffDao implements RepositoryInterface<Staff>, UserRepositoryInterface<Staff> {
+public class StaffDao implements UserRepositoryInterface<User> {
 
     private Session session;
 
     @Override
-    public void save(Staff t) {
+    public void save(User t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(t);
@@ -35,7 +35,7 @@ public class StaffDao implements RepositoryInterface<Staff>, UserRepositoryInter
     }
 
     @Override
-    public void update(Staff t) {
+    public void update(User t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.update(t);
@@ -44,7 +44,7 @@ public class StaffDao implements RepositoryInterface<Staff>, UserRepositoryInter
     }
 
     @Override
-    public void delete(Staff t) {
+    public void delete(User t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.update(t);
@@ -53,15 +53,15 @@ public class StaffDao implements RepositoryInterface<Staff>, UserRepositoryInter
     }
 
     @Override
-    public Set<Staff> findAll() {
-        List<Staff> staffs = new ArrayList<>();
+    public Set<User> findAll() {
+        List<User> staffs = new ArrayList<>();
         try {
             session = HibernateUtilities.getSessionFactory().openSession();
             CriteriaBuilder builder = session.getCriteriaBuilder();
-            CriteriaQuery<Staff> query = builder.createQuery(Staff.class);
-            Root<Staff> root = query.from(Staff.class);
+            CriteriaQuery<User> query = builder.createQuery(User.class);
+            Root<User> root = query.from(User.class);
             query.select(root);
-            Query<Staff> q = session.createQuery(query);
+            Query<User> q = session.createQuery(query);
             
             staffs = q.list();
             session.close();
@@ -71,23 +71,23 @@ public class StaffDao implements RepositoryInterface<Staff>, UserRepositoryInter
     }
 
     @Override
-    public Staff findById(String id) {
+    public User findById(String id) {
         session = HibernateUtilities.getSessionFactory().openSession();
-        Staff staff = session.get(Staff.class, id);
+        User staff = session.get(User.class, id);
         session.close();
         return staff;
     }
 
     @Override
-    public Staff findByUsername(String username) {
-        Staff staff = null;
+    public User findByUsername(String username) {
+        User staff = null;
         try {
             session = HibernateUtilities.getSessionFactory().openSession();
             CriteriaBuilder builder = session.getCriteriaBuilder();
-            CriteriaQuery<Staff> query = builder.createQuery(Staff.class);
-            Root<Staff> root = query.from(Staff.class);
+            CriteriaQuery<User> query = builder.createQuery(User.class);
+            Root<User> root = query.from(User.class);
             query.select(root).where(builder.equal(root.get("username"), username));
-            Query<Staff> q = session.createQuery(query);
+            Query<User> q = session.createQuery(query);
             staff = q.uniqueResult();
         } catch (Exception e) {
             e.printStackTrace();

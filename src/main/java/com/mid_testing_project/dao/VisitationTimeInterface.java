@@ -5,11 +5,13 @@
  */
 package com.mid_testing_project.dao;
 
+import java.util.Set;
+
 /**
  *
  * @author regis
  * @param <T>
  */
-public interface UserRepositoryInterface<T> extends RepositoryInterface<T>{
-    T findByUsername(String username);
+public interface VisitationTimeInterface<T> extends RepositoryInterface<T> {
+    Set<T> findAllInUseTime();
 }

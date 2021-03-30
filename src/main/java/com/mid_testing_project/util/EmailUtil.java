@@ -30,7 +30,7 @@ public class EmailUtil {
     private static Session session;
     
     
-    static {
+    {
         properties = System.getProperties();
         properties.put("mail.smtp.host", HOST);
         properties.put("mail.smtp.port", 465);
@@ -53,47 +53,20 @@ public class EmailUtil {
             
             message.setFrom(new InternetAddress(FROM_EMAIL_ADDRESS));
             
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(visitor.getVisitor().getEmail()));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(visitor.getVisitor().getVisitorEmail()));
             
             message.setSubject("VISITATION UPDATE");
             
-            message.setText("Your request visit has been submitted. Please continue checking your email");
-            
-            Transport.send(message);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
-    public static void sendDenialEmail(Visitation visitor){
-        
-        try {
-            MimeMessage message = new MimeMessage(session);
-            
-            message.setFrom(new InternetAddress(FROM_EMAIL_ADDRESS));
-            
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(visitor.getVisitor().getEmail()));
-            
-            message.setSubject("VISITATION UPDATE");
-            
-            message.setText("Your request visit has been cancelled. Please request for another visit");
-            
-            Transport.send(message);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
-    public static void sendAcceptanceEmail(Visitation visitor){
-        
-        try {
-            MimeMessage message = new MimeMessage(session);
-            
-            message.setFrom(new InternetAddress(FROM_EMAIL_ADDRESS));
-            
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(visitor.getVisitor().getEmail()));
-            
-            message.setSubject("VISITATION UPDATE");
-            
-            message.setText("Your request visit has been approved. Please be on time");
+            message.setText("Your Visit to Prison " +
+                            visitor.getPrisoner().getPrison().getName()+ 
+                            " for " + 
+                            visitor.getPrisoner().getName() + 
+                            " on "+ 
+                            visitor.getVisitationDate() + 
+                            " " +
+                            visitor.getVisitationTime().getVisitTime() + 
+                            "mhas been approved. Please be on time!!"
+                            );
             
             Transport.send(message);
         } catch (MessagingException e) {

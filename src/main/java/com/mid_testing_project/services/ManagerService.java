@@ -6,9 +6,9 @@
 package com.mid_testing_project.services;
 
 import com.mid_testing_project.dao.StaffDao;
-import com.mid_testing_project.domain.Staff;
-import com.mid_testing_project.domain.StaffRole;
-import com.mid_testing_project.domain.StaffWorkingStatus;
+import com.mid_testing_project.domain.User;
+import com.mid_testing_project.domain.UserRole;
+import com.mid_testing_project.domain.UserWorkingStatus;
 import com.mid_testing_project.exceptions.AlreadyStaffFiredException;
 import com.mid_testing_project.exceptions.AlreadyStaffSuspendedException;
 import com.mid_testing_project.exceptions.InvalidStaffException;
@@ -20,33 +20,33 @@ import com.mid_testing_project.exceptions.InvalidStaffException;
 public class ManagerService {
     private final StaffDao staffDao = new StaffDao();
     
-    public Staff addGuard(Staff staff){
-        staff.setStaffRole(StaffRole.GUARD);
-        staff.setStaffWorkingStatus(StaffWorkingStatus.ACTIVE);
+    public User addGuard(User staff){
+        staff.setStaffRole(UserRole.GUARD);
+        staff.setStaffWorkingStatus(UserWorkingStatus.ACTIVE);
         staffDao.save(staff);
         return staff;
     }
-    public Staff suspendGuard(String staffId){
-        Staff staff = staffDao.findById(staffId);
+    public User suspendGuard(String staffId){
+        User staff = staffDao.findById(staffId);
         if(staff == null){
             throw new InvalidStaffException("staff does not exist");
         }
         if(staff.getStaffWorkingStatus().name().equalsIgnoreCase("SUSPENDED")){
             throw new AlreadyStaffSuspendedException("staff is already suspended");
         }
-        staff.setStaffWorkingStatus(StaffWorkingStatus.SUSPENDED);
+        staff.setStaffWorkingStatus(UserWorkingStatus.SUSPENDED);
         staffDao.update(staff);
         return staff;
     }
-    public Staff fireGuard(String staffId){
-        Staff staff = staffDao.findById(staffId);
+    public User fireGuard(String staffId){
+        User staff = staffDao.findById(staffId);
         if(staff == null){
             throw new InvalidStaffException("staff does not exist");
         }
         if(staff.getStaffWorkingStatus().name().equalsIgnoreCase("FIRED")){
             throw new AlreadyStaffFiredException("staff is already fired");
         }
-        staff.setStaffWorkingStatus(StaffWorkingStatus.FIRED);
+        staff.setStaffWorkingStatus(UserWorkingStatus.FIRED);
         staffDao.update(staff);
         return staff;
     }

@@ -25,6 +25,7 @@ public class Prisoner extends Person implements Serializable{
     private Prison prison;
     @Enumerated(EnumType.STRING)
     private PrisonerStatus prisonerStatus;
+    private Guardian guardian;
 
     public Prisoner() {
     }
@@ -67,6 +68,14 @@ public class Prisoner extends Person implements Serializable{
 
     public void setPrisonerStatus(PrisonerStatus prisonerStatus) {
         this.prisonerStatus = prisonerStatus;
+    }
+
+    public Guardian getGuardian() {
+        return guardian;
+    }
+
+    public void setGuardian(Guardian guardian) {
+        this.guardian = guardian;
     }
     
     

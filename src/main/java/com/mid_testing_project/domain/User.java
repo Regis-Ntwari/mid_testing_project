@@ -12,13 +12,15 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author regis
  */
 @Entity
-public class Staff extends Person implements Serializable{
+@Table(name = "users")
+public class User extends Person implements Serializable{
     @Column(nullable = false, unique = true)
     private String username;
     @Column(nullable = false)
@@ -27,11 +29,11 @@ public class Staff extends Person implements Serializable{
     @ManyToOne(optional = false)
     private Prison prison;
     @Enumerated(EnumType.STRING)
-    private StaffRole staffRole;
+    private UserRole staffRole;
     @Enumerated(EnumType.STRING)
-    private StaffWorkingStatus staffWorkingStatus;
+    private UserWorkingStatus staffWorkingStatus;
 
-    public Staff() {
+    public User() {
     }
 
     public String getUsername() {
@@ -66,19 +68,19 @@ public class Staff extends Person implements Serializable{
         this.prison = prison;
     }
 
-    public StaffRole getStaffRole() {
+    public UserRole getStaffRole() {
         return staffRole;
     }
 
-    public void setStaffRole(StaffRole staffRole) {
+    public void setStaffRole(UserRole staffRole) {
         this.staffRole = staffRole;
     }
 
-    public StaffWorkingStatus getStaffWorkingStatus() {
+    public UserWorkingStatus getStaffWorkingStatus() {
         return staffWorkingStatus;
     }
 
-    public void setStaffWorkingStatus(StaffWorkingStatus staffWorkingStatus) {
+    public void setStaffWorkingStatus(UserWorkingStatus staffWorkingStatus) {
         this.staffWorkingStatus = staffWorkingStatus;
     }
     

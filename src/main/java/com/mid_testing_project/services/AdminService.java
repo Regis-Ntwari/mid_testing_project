@@ -6,9 +6,10 @@
 package com.mid_testing_project.services;
 
 import com.mid_testing_project.dao.StaffDao;
-import com.mid_testing_project.domain.Staff;
-import com.mid_testing_project.domain.StaffRole;
-import com.mid_testing_project.domain.StaffWorkingStatus;
+import com.mid_testing_project.domain.User;
+import com.mid_testing_project.domain.UserRole;
+import com.mid_testing_project.domain.UserWorkingStatus;
+import com.mid_testing_project.exceptions.InvalidStaffException;
 import java.time.LocalDate;
 
 /**
@@ -18,20 +19,32 @@ import java.time.LocalDate;
 public class AdminService {
     private final StaffDao adminDao = new StaffDao();
     
-    public Staff addManager(Staff staff){
-        staff.setStaffRole(StaffRole.MANAGER);
+    public User addManager(String userId){
+        User staff = adminDao.findByUsername(userId);
+        if(staff == null){
+            throw new InvalidStaffException("invalid user");
+        }
+        staff.setStaffRole(UserRole.MANAGER);
         staff.setJoinedDate(LocalDate.now());
-        staff.setStaffWorkingStatus(StaffWorkingStatus.ACTIVE);
+        staff.setStaffWorkingStatus(UserWorkingStatus.ACTIVE);
         adminDao.save(staff);
         return staff;
     }
-    public Staff fireManager(Staff staff){
-        staff.setStaffWorkingStatus(StaffWorkingStatus.FIRED);
+    public User fireManager(String userId){
+        User staff = adminDao.findByUsername(userId);
+        if(staff == null){
+            throw new InvalidStaffException("invalid user");
+        }
+        staff.setStaffWorkingStatus(UserWorkingStatus.FIRED);
         adminDao.update(staff);
         return staff;
     }
-    public Staff suspendManager(Staff staff){
-        staff.setStaffWorkingStatus(StaffWorkingStatus.SUSPENDED);
+    public User suspendManager(String userId){
+        User staff = adminDao.findByUsername(userId);
+        if(staff == null){
+            throw new InvalidStaffException("invalid user");
+        }
+        staff.setStaffWorkingStatus(UserWorkingStatus.SUSPENDED);
         adminDao.update(staff);
         return staff;
     }

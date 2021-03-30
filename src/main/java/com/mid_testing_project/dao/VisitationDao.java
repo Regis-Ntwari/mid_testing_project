@@ -8,7 +8,6 @@ package com.mid_testing_project.dao;
 import com.mid_testing_project.domain.Prison;
 import com.mid_testing_project.domain.Visitation;
 import com.mid_testing_project.domain.VisitationOccurrenceStatus;
-import com.mid_testing_project.domain.VisitationRequestStatus;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -26,7 +25,7 @@ import org.hibernate.query.Query;
  *
  * @author regis
  */
-public class VisitationDao implements RepositoryInterface<Visitation> {
+public class VisitationDao implements VisitationInterface<Visitation> {
 
     private Session session;
 
@@ -84,7 +83,8 @@ public class VisitationDao implements RepositoryInterface<Visitation> {
         return visitation;
     }
 
-    public Set<Visitation> findAllByOccurenceStatus(VisitationOccurrenceStatus status, Prison prison) {
+    @Override
+    public Set<Visitation> findAllByOccurrenceStatus(VisitationOccurrenceStatus status, Prison prison) {
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder cb =  session.getCriteriaBuilder();
         CriteriaQuery<Visitation> q = cb.createQuery(Visitation.class);
@@ -100,21 +100,7 @@ public class VisitationDao implements RepositoryInterface<Visitation> {
         return new HashSet<>(visitations);
     }
     
-    public Set<Visitation> findAllByRequestStatus (VisitationRequestStatus status, Prison prison){
-        session = HibernateUtilities.getSessionFactory().openSession();
-        CriteriaBuilder cb = session.getCriteriaBuilder();
-        CriteriaQuery<Visitation> cq = cb.createQuery(Visitation.class);
-        Root<Visitation> root = cq.from(Visitation.class);
-        
-        root.fetch("prisoner", JoinType.LEFT);
-        cq.select(root).where(cb.and(cb.equal(root.get("prisoner").get("prison"), prison),
-                cb.equal(root.get("requestStatus"), status)));
-        
-        List<Visitation> vd = session.createQuery(cq).list();
-        session.close();
-        return new HashSet<>(vd);
-    }
-    
+    @Override
     public Set<Visitation> findAllByToday(Prison prison){
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();

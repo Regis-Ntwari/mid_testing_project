@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mid_testing_project.domain;
+package com.mid_testing_project.exceptions;
 
 /**
  *
  * @author regis
  */
-public enum StaffWorkingStatus {
-    ACTIVE, SUSPENDED, FIRED
+public class InvalidVisitationTimeException extends RuntimeException{
+
+    public InvalidVisitationTimeException(String string) {
+        super(string);
+    }
+    
 }

@@ -9,6 +9,6 @@ package com.mid_testing_project.domain;
  *
  * @author regis
  */
-public enum StaffRole {
-    MANAGER, GUARD
+public enum UserWorkingStatus {
+    ACTIVE, SUSPENDED, FIRED
 }
