@@ -14,6 +14,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -27,12 +28,15 @@ public class VisitationTime implements Serializable {
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
-    private String visitTime;
+    private String visitStartTime;
+    private String visitEndTime;
     private String visitationDay;
     @OneToMany(mappedBy = "visitationTime")
     private List<Visitation> visits = new ArrayList<>();
     @Enumerated(EnumType.STRING)
     private VisitationTimeStatus visitationTimeStatus;
+    @Version
+    private long version = 1;
 
     public String getId() {
         return id;
@@ -42,12 +46,20 @@ public class VisitationTime implements Serializable {
         this.id = id;
     }
 
-    public String getVisitTime() {
-        return visitTime;
+    public String getVisitStartTime() {
+        return visitStartTime;
     }
 
-    public void setVisitTime(String visitTime) {
-        this.visitTime = visitTime;
+    public void setVisitStartTime(String visitStartTime) {
+        this.visitStartTime = visitStartTime;
+    }
+
+    public String getVisitEndTime() {
+        return visitEndTime;
+    }
+
+    public void setVisitEndTime(String visitEndTime) {
+        this.visitEndTime = visitEndTime;
     }
 
     public List<Visitation> getVisits() {
@@ -72,6 +84,14 @@ public class VisitationTime implements Serializable {
 
     public void setVisitationDay(String visitationDay) {
         this.visitationDay = visitationDay;
+    }
+
+    public long getVersion() {
+        return version;
+    }
+
+    public void setVersion(long version) {
+        this.version = version;
     }
     
 }

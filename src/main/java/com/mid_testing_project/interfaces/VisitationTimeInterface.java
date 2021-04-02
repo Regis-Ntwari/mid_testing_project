@@ -1,18 +1,17 @@
-
-import com.mid_testing_project.dao.HibernateUtilities;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.mid_testing_project.interfaces;
+
+import java.util.Set;
 
 /**
  *
  * @author regis
+ * @param <T>
  */
-public class Test {
-    public static void main(String[] args) {
-        HibernateUtilities.getSessionFactory();
-    }
+public interface VisitationTimeInterface<T> extends RepositoryInterface<T> {
+    Set<T> findAllInUseTime();
 }

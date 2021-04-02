@@ -12,7 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -30,6 +30,8 @@ public abstract class Person implements Serializable{
     private String nationalId;
     private String email;
     private String phone;
+    @Version
+    private long version = 1;
 
     public Person() {
     }
@@ -97,6 +99,14 @@ public abstract class Person implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public long getVersion() {
+        return version;
+    }
+
+    public void setVersion(long version) {
+        this.version = version;
     }
     
     

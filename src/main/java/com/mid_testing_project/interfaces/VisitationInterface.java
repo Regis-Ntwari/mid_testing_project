@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mid_testing_project.dao;
+package com.mid_testing_project.interfaces;
 
 import com.mid_testing_project.domain.Prison;
-import com.mid_testing_project.domain.VisitationOccurrenceStatus;
+import java.time.LocalDate;
 import java.util.Set;
 
 /**
@@ -15,6 +15,7 @@ import java.util.Set;
  * @param <T>
  */
 public interface VisitationInterface<T> extends RepositoryInterface<T> {
-    Set<T> findAllByOccurrenceStatus(VisitationOccurrenceStatus status, Prison prison);
     Set<T> findAllByToday(Prison prison);
+    Set<T> findAllVisitations(Prison prison);
+    Set<T> findAllVisitationsByCertainDate(LocalDate date, Prison prison);
 }

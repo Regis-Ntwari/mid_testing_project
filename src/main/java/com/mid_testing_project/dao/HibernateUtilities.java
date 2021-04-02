@@ -8,7 +8,9 @@ package com.mid_testing_project.dao;
 import com.mid_testing_project.domain.Person;
 import com.mid_testing_project.domain.Prison;
 import com.mid_testing_project.domain.Prisoner;
+import com.mid_testing_project.domain.PrisonerStatusTrack;
 import com.mid_testing_project.domain.User;
+import com.mid_testing_project.domain.UserStatus;
 import com.mid_testing_project.domain.Visitation;
 import com.mid_testing_project.domain.VisitationTime;
 import com.mid_testing_project.domain.Visitor;
@@ -46,6 +48,8 @@ public class HibernateUtilities {
             configuration.addAnnotatedClass(Visitation.class);
             configuration.addAnnotatedClass(VisitationTime.class);
             configuration.addAnnotatedClass(Visitor.class);
+            configuration.addAnnotatedClass(UserStatus.class);
+            configuration.addAnnotatedClass(PrisonerStatusTrack.class);
             
             sessionFactory = configuration.buildSessionFactory();
             

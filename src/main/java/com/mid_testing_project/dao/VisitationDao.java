@@ -5,9 +5,9 @@
  */
 package com.mid_testing_project.dao;
 
+import com.mid_testing_project.interfaces.VisitationInterface;
 import com.mid_testing_project.domain.Prison;
 import com.mid_testing_project.domain.Visitation;
-import com.mid_testing_project.domain.VisitationOccurrenceStatus;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -30,30 +30,33 @@ public class VisitationDao implements VisitationInterface<Visitation> {
     private Session session;
 
     @Override
-    public void save(Visitation t) {
+    public Visitation save(Visitation t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(t);
         session.getTransaction().commit();
         session.close();
+        return t;
     }
 
     @Override
-    public void update(Visitation t) {
+    public Visitation update(Visitation t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.update(t);
         session.getTransaction().commit();
         session.close();
+        return t;
     }
 
     @Override
-    public void delete(Visitation t) {
+    public Visitation delete(Visitation t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.delete(t);
         session.getTransaction().commit();
         session.close();
+        return t;
     }
 
     @Override
@@ -82,23 +85,6 @@ public class VisitationDao implements VisitationInterface<Visitation> {
         session.close();
         return visitation;
     }
-
-    @Override
-    public Set<Visitation> findAllByOccurrenceStatus(VisitationOccurrenceStatus status, Prison prison) {
-        session = HibernateUtilities.getSessionFactory().openSession();
-        CriteriaBuilder cb =  session.getCriteriaBuilder();
-        CriteriaQuery<Visitation> q = cb.createQuery(Visitation.class);
-        Root<Visitation> root = q.from(Visitation.class);
-        root.fetch("prisoner", JoinType.LEFT);
-        q.select(root).where(cb.and(cb.equal(root.get("prisoner").get("prison"), prison), 
-                cb.equal(root.get("occurrenceStatus"), status)));
-        
-        Query<Visitation> vd = session.createQuery(q);
-        
-        List<Visitation> visitations = vd.getResultList();
-        session.close();
-        return new HashSet<>(visitations);
-    }
     
     @Override
     public Set<Visitation> findAllByToday(Prison prison){
@@ -112,6 +98,39 @@ public class VisitationDao implements VisitationInterface<Visitation> {
                                                 builder.equal(root.get("visitationDate"), LocalDate.now()), builder.equal(root.get("requestStatus"), "APPROVED")));
         
         List<Visitation> visits = session.createQuery(query).getResultList();
+        session.close();
         return new HashSet<>(visits);
     }
+
+    @Override
+    public Set<Visitation> findAllVisitations(Prison prison) {
+        session = HibernateUtilities.getSessionFactory().openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Visitation> query = builder.createQuery(Visitation.class);
+        Root<Visitation> root = query.from(Visitation.class);
+        
+        root.fetch("prisoner", JoinType.LEFT);
+        query.select(root).where(builder.equal(root.get("prisoner").get("prison"), prison));
+        List<Visitation> visitations = session.createQuery(query).getResultList();
+        session.close();
+        return new HashSet<>(visitations);
+    }
+
+    @Override
+    public Set<Visitation> findAllVisitationsByCertainDate(LocalDate date, Prison prison) {
+        session = HibernateUtilities.getSessionFactory().openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Visitation> query = builder.createQuery(Visitation.class);
+        Root<Visitation> root = query.from(Visitation.class);
+        
+        root.fetch("prisoner", JoinType.LEFT);
+        query.select(root).where(builder.and(builder.equal(root.get("prisoner").get("prison"), prison), 
+                                            builder.equal(root.get("visitationDate"), date)));
+        
+        List<Visitation> visitations = session.createQuery(query).getResultList();
+        session.close();
+        return new HashSet<>(visitations);
+    }
+    
+    
 }

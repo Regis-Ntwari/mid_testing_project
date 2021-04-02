@@ -5,6 +5,7 @@
  */
 package com.mid_testing_project.dao;
 
+import com.mid_testing_project.interfaces.UserRepositoryInterface;
 import com.mid_testing_project.domain.User;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -21,35 +22,38 @@ import org.hibernate.query.Query;
  *
  * @author regis
  */
-public class StaffDao implements UserRepositoryInterface<User> {
+public class UserDao implements UserRepositoryInterface<User> {
 
     private Session session;
 
     @Override
-    public void save(User t) {
+    public User save(User t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(t);
         session.getTransaction().commit();
         session.close();
+        return t;
     }
 
     @Override
-    public void update(User t) {
+    public User update(User t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.update(t);
         session.getTransaction().commit();
         session.close();
+        return t;
     }
 
     @Override
-    public void delete(User t) {
+    public User delete(User t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.update(t);
         session.getTransaction().commit();
         session.close();
+        return t;
     }
 
     @Override

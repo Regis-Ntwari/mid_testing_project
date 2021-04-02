@@ -7,6 +7,7 @@ package com.mid_testing_project.dao;
 
 import com.mid_testing_project.domain.Prison;
 import com.mid_testing_project.domain.Prisoner;
+import com.mid_testing_project.interfaces.PrisonerDaoInterface;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -22,35 +23,38 @@ import org.hibernate.query.Query;
  *
  * @author regis
  */
-public class PrisonerDao implements RepositoryInterface<Prisoner>{
-    
-    Session session = HibernateUtilities.getSessionFactory().openSession();
+public class PrisonerDao implements PrisonerDaoInterface<Prisoner> {
+
+    private Session session;
 
     @Override
-    public void save(Prisoner t) {
+    public Prisoner save(Prisoner t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(t);
         session.getTransaction().commit();
         session.close();
+        return t;
     }
 
     @Override
-    public void update(Prisoner t) {
+    public Prisoner update(Prisoner t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.update(t);
         session.getTransaction().commit();
         session.close();
+        return t;
     }
 
     @Override
-    public void delete(Prisoner t) {
+    public Prisoner delete(Prisoner t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.delete(t);
         session.getTransaction().commit();
         session.close();
+        return t;
     }
 
     @Override
@@ -63,7 +67,7 @@ public class PrisonerDao implements RepositoryInterface<Prisoner>{
             Root<Prisoner> root = query.from(Prisoner.class);
             query.select(root);
             Query<Prisoner> q = session.createQuery(query);
-            
+
             prisoners = q.list();
             session.close();
         } catch (HibernateException e) {
@@ -76,19 +80,20 @@ public class PrisonerDao implements RepositoryInterface<Prisoner>{
         session = HibernateUtilities.getSessionFactory().openSession();
         Prisoner prisoner = session.get(Prisoner.class, id);
         session.close();
-        return  prisoner;
+        return prisoner;
     }
-    
-    public Set<Prisoner> findAllPrisonersInPrison(Prison prison){
+
+    @Override
+    public Set<Prisoner> findAllPrisonersInPrison(Prison prison) {
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<Prisoner> query = builder.createQuery(Prisoner.class);
         Root<Prisoner> root = query.from(Prisoner.class);
-        
+
         query.select(root).where(builder.equal(root.get("prison"), prison));
         Set<Prisoner> prisoners = new HashSet<>(session.createQuery(query).list());
         session.close();
         return prisoners;
     }
-    
+
 }

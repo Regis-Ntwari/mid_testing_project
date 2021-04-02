@@ -29,7 +29,7 @@ public class Prisoner extends Person implements Serializable{
 
     public Prisoner() {
     }
-
+    
     public LocalDate getEntryDate() {
         return entryDate;
     }

@@ -5,8 +5,8 @@
  */
 package com.mid_testing_project.dao;
 
-import com.mid_testing_project.interfaces.VisitationTimeInterface;
-import com.mid_testing_project.domain.VisitationTime;
+import com.mid_testing_project.domain.UserStatus;
+import com.mid_testing_project.interfaces.RepositoryInterface;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,12 +19,11 @@ import org.hibernate.Session;
  *
  * @author regis
  */
-public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime>{
+public class UserStatusDao implements RepositoryInterface<UserStatus>{
 
     private Session session;
-
     @Override
-    public VisitationTime save(VisitationTime t) {
+    public UserStatus save(UserStatus t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(t);
@@ -32,9 +31,9 @@ public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime
         session.close();
         return t;
     }
-    
+
     @Override
-    public VisitationTime update(VisitationTime t) {
+    public UserStatus update(UserStatus t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.update(t);
@@ -44,50 +43,35 @@ public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime
     }
 
     @Override
-    public VisitationTime findById(String id) {
-        session = HibernateUtilities.getSessionFactory().openSession();
-        VisitationTime time = session.get(VisitationTime.class, id);
-        session.close();
-        return time;
-    }
-
-    @Override
-    public VisitationTime delete(VisitationTime t) {
+    public UserStatus delete(UserStatus t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
-        session.update(t);
+        session.delete(t);
         session.getTransaction().commit();
         session.close();
         return t;
     }
 
     @Override
-    public Set<VisitationTime> findAll() {
+    public Set<UserStatus> findAll() {
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
-        Root<VisitationTime> root = query.from(VisitationTime.class);
+        CriteriaQuery<UserStatus> query = builder.createQuery(UserStatus.class);
+        Root<UserStatus> root = query.from(UserStatus.class);
         
         query.select(root);
         
-        List<VisitationTime> allVisitationTimes = session.createQuery(query).getResultList();
+        List<UserStatus> all = session.createQuery(query).getResultList();
         session.close();
-        return new HashSet<>(allVisitationTimes);
+        return new HashSet<>(all);
     }
 
     @Override
-    public Set<VisitationTime> findAllInUseTime() {
+    public UserStatus findById(String id) {
         session = HibernateUtilities.getSessionFactory().openSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
-        Root<VisitationTime> root = query.from(VisitationTime.class);
-        
-        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), "IN_USE"));
-        
-        List<VisitationTime> allInUseTimes = session.createQuery(query).getResultList();
+        UserStatus status = session.get(UserStatus.class, id);
         session.close();
-        return new HashSet<>(allInUseTimes);
+        return status;
     }
-
     
 }

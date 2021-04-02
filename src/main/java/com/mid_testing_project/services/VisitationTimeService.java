@@ -10,6 +10,7 @@ import com.mid_testing_project.domain.VisitationTime;
 import com.mid_testing_project.domain.VisitationTimeStatus;
 import com.mid_testing_project.exceptions.AlreadyNotInUseTimeException;
 import com.mid_testing_project.exceptions.InvalidVisitationTimeException;
+import com.mid_testing_project.interfaces.VisitationTimeInterface;
 
 /**
  *
@@ -17,7 +18,7 @@ import com.mid_testing_project.exceptions.InvalidVisitationTimeException;
  */
 public class VisitationTimeService {
 
-    private final VisitationTimeDao timeDao = new VisitationTimeDao();
+    private final VisitationTimeInterface timeDao = new VisitationTimeDao();
 
     public VisitationTime addVisitationTime(VisitationTime time) {
         time.setVisitationTimeStatus(VisitationTimeStatus.IN_USE);
@@ -27,7 +28,7 @@ public class VisitationTimeService {
     }
 
     public VisitationTime disableVisitationTime(String timeId) {
-        VisitationTime time = timeDao.findById(timeId);
+        VisitationTime time = (VisitationTime) timeDao.findById(timeId);
         if (time == null) {
             throw new InvalidVisitationTimeException("time does not exist");
         }

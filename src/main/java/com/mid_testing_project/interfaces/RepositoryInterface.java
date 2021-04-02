@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mid_testing_project.dao;
+package com.mid_testing_project.interfaces;
 
 import java.util.Set;
 
@@ -13,9 +13,9 @@ import java.util.Set;
  * @param <T>
  */
 public interface RepositoryInterface<T> {
-    void save(T t);
-    void update(T t);
-    void delete(T t);
+    T save(T t);
+    T update(T t);
+    T delete(T t);
     Set<T> findAll();
     T findById(String id);
 }

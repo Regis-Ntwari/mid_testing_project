@@ -5,8 +5,8 @@
  */
 package com.mid_testing_project.dao;
 
-import com.mid_testing_project.interfaces.VisitationTimeInterface;
-import com.mid_testing_project.domain.VisitationTime;
+import com.mid_testing_project.interfaces.RepositoryInterface;
+import com.mid_testing_project.domain.PrisonerStatusTrack;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,12 +19,11 @@ import org.hibernate.Session;
  *
  * @author regis
  */
-public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime>{
+public class PrisonerStatusTrackDao implements RepositoryInterface<PrisonerStatusTrack>{
 
     private Session session;
-
     @Override
-    public VisitationTime save(VisitationTime t) {
+    public PrisonerStatusTrack save(PrisonerStatusTrack t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(t);
@@ -32,9 +31,9 @@ public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime
         session.close();
         return t;
     }
-    
+
     @Override
-    public VisitationTime update(VisitationTime t) {
+    public PrisonerStatusTrack update(PrisonerStatusTrack t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
         session.update(t);
@@ -44,50 +43,35 @@ public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime
     }
 
     @Override
-    public VisitationTime findById(String id) {
-        session = HibernateUtilities.getSessionFactory().openSession();
-        VisitationTime time = session.get(VisitationTime.class, id);
-        session.close();
-        return time;
-    }
-
-    @Override
-    public VisitationTime delete(VisitationTime t) {
+    public PrisonerStatusTrack delete(PrisonerStatusTrack t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
-        session.update(t);
+        session.delete(t);
         session.getTransaction().commit();
         session.close();
         return t;
     }
 
     @Override
-    public Set<VisitationTime> findAll() {
+    public Set<PrisonerStatusTrack> findAll() {
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
-        Root<VisitationTime> root = query.from(VisitationTime.class);
+        CriteriaQuery<PrisonerStatusTrack> query = builder.createQuery(PrisonerStatusTrack.class);
+        Root<PrisonerStatusTrack> root = query.from(PrisonerStatusTrack.class);
         
         query.select(root);
         
-        List<VisitationTime> allVisitationTimes = session.createQuery(query).getResultList();
+        List<PrisonerStatusTrack> all = session.createQuery(query).getResultList();
         session.close();
-        return new HashSet<>(allVisitationTimes);
+        return new HashSet<>(all);
     }
 
     @Override
-    public Set<VisitationTime> findAllInUseTime() {
+    public PrisonerStatusTrack findById(String id) {
         session = HibernateUtilities.getSessionFactory().openSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
-        Root<VisitationTime> root = query.from(VisitationTime.class);
-        
-        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), "IN_USE"));
-        
-        List<VisitationTime> allInUseTimes = session.createQuery(query).getResultList();
+        PrisonerStatusTrack pst = session.get(PrisonerStatusTrack.class, id);
         session.close();
-        return new HashSet<>(allInUseTimes);
+        return pst;
     }
-
     
 }

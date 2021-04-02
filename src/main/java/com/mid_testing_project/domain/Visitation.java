@@ -8,11 +8,10 @@ package com.mid_testing_project.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -30,21 +29,12 @@ public class Visitation implements Serializable {
     @ManyToOne
     private Prisoner prisoner;
     private LocalDate visitationDate;
-    private LocalDate visitationRequestDate;
     @ManyToOne
     private VisitationTime visitationTime;
-    @Enumerated(EnumType.STRING)
-    private VisitationOccurrenceStatus occurrenceStatus;
+    @Version
+    private long version = 1;
 
     public Visitation() {
-    }
-
-    public VisitationOccurrenceStatus getOccurrenceStatus() {
-        return occurrenceStatus;
-    }
-
-    public void setOccurrenceStatus(VisitationOccurrenceStatus occurrenceStatus) {
-        this.occurrenceStatus = occurrenceStatus;
     }
 
     public String getId() {
@@ -79,14 +69,6 @@ public class Visitation implements Serializable {
         this.visitationDate = visitationDate;
     }
 
-    public LocalDate getVisitationRequestDate() {
-        return visitationRequestDate;
-    }
-
-    public void setVisitationRequestDate(LocalDate visitationRequestDate) {
-        this.visitationRequestDate = visitationRequestDate;
-    }
-
     public VisitationTime getVisitationTime() {
         return visitationTime;
     }
@@ -95,4 +77,12 @@ public class Visitation implements Serializable {
         this.visitationTime = visitationTime;
     }
 
+    public long getVersion() {
+        return version;
+    }
+
+    public void setVersion(long version) {
+        this.version = version;
+    }
+    
 }
