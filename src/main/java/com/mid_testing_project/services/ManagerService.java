@@ -29,7 +29,7 @@ public class ManagerService {
     public User addGuard(String managerId, User staff, String comment){
         User manager = (User) staffDao.findById(managerId);
         staff.setStaffRole(UserRole.GUARD);
-        staff.setStaffWorkingStatus(UserWorkingStatus.ACTIVE);
+        staff.setStaffWorkingStatus(UserWorkingStatus.ACTIVATED);
         staffDao.save(staff);
         statusDao.save(new UserStatus(manager, staff, comment, LocalDateTime.now(), staff.getStaffRole(), staff.getStaffWorkingStatus()));
         return staff;
