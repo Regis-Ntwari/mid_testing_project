@@ -15,8 +15,8 @@ import com.ninja_squad.dbsetup.operation.Operation;
 public class CommonOperations {
     public static final Operation INSERT_DATA = Operations.sequenceOf(
                                                     Operations.insertInto("PRISON")
-                                                    .columns("ID","NAME")
-                                                    .values("PR-01", "Mageragere")
+                                                    .columns("ID","NAME", "VERSION")
+                                                    .values("PR-01", "Mageragere", "1")
                                                     .build(),
                                                     Operations.insertInto("PERSON")
                                                     .columns("ID", "NAME", "NATIONALID", "PHONE", "EMAIL", "VERSION")
@@ -32,6 +32,14 @@ public class CommonOperations {
                                                             "pupa@gmail.com", "1")
                                                     .values("P-06", "PAPI", "19090909090", "078000000",
                                                             "papi@gmail.com", "1")
+                                                    .values("P-07", "ELIAS", "19090909090", "078000000",
+                                                            "elias@gmail.com", "1")
+                                                    .values("P-10", "TEX", "19090909090", "078000000",
+                                                            "tex@gmail.com", "1")
+                                                    .values("P-11", "TATA", "19090909090", "078000000",
+                                                            "tata@gmail.com", "1")
+                                                    .values("P-12", "TETE", "19090909090", "078000000",
+                                                            "tete@gmail.com", "1")
                                                     .build(),
                                                     Operations.insertInto("PRISONER")
                                                     .columns("ENTRYDATE", 
@@ -56,6 +64,14 @@ public class CommonOperations {
                                                             "ACTIVATED","P-05")
                                                     .values("PAPI", "PAPI","2019-09-09","PR-01","ADMIN",
                                                             "SUSPENDED","P-06")
+                                                    .values("ELIAS", "ELIAS","2019-09-09","PR-01","MANAGER",
+                                                            "FIRED","P-07")
+                                                    .values("TEX", "TEX","2019-09-09","PR-01","MANAGER",
+                                                            "SUSPENDED","P-10")
+                                                    .values("TATA", "TATA","2019-09-09","PR-01","GUARD",
+                                                            "SUSPENDED","P-11")
+                                                    .values("TETE", "TETE","2019-09-09","PR-01","GUARD",
+                                                            "FIRED","P-12")
                                                     .build(),
                                                     Operations.insertInto("VISITATIONTIME")
                                                     .columns("ID", "VISITSTARTTIME", "VISITENDTIME", 
@@ -73,5 +89,7 @@ public class CommonOperations {
                                                             "1","VI-02", "P-04", "2021-04-04", "V-01")
                                                     .build()
                                                 );
-    public static final Operation DELETE_DATA = Operations.deleteAllFrom("VISITATION", "VISITATIONTIME","USERSTATUS", "USERS", "PRISONER", "PERSON", "PRISON");
+    public static final Operation DELETE_DATA = Operations.deleteAllFrom("VISITATION", "VISITATIONTIME",
+                                                                        "USERSTATUS","PRISONERSTATUSTRACK", "USERS", "PRISONER", 
+                                                                        "PERSON", "PRISON");
 }

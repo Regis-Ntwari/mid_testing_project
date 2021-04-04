@@ -17,9 +17,10 @@ import com.mid_testing_project.domain.UserRole;
 import com.mid_testing_project.domain.UserStatus;
 import com.mid_testing_project.domain.UserWorkingStatus;
 import com.mid_testing_project.exceptions.AlreadyStaffFiredException;
+import com.mid_testing_project.exceptions.AlreadyStaffSuspendedException;
 import com.mid_testing_project.exceptions.InvalidPrisonException;
 import com.mid_testing_project.exceptions.InvalidStaffException;
-import com.mid_testing_project.exceptions.NotAdminException;
+import com.mid_testing_project.exceptions.NotStaffException;
 import com.mid_testing_project.exceptions.NotStaffActivatedException;
 import com.mid_testing_project.interfaces.RepositoryInterface;
 import java.time.LocalDate;
@@ -36,20 +37,20 @@ public class AdminService {
     private final RepositoryInterface statusDao = new UserStatusDao();
     private final RepositoryInterface prisonerStatusTrackDao = new PrisonerStatusTrackDao();
     private final RepositoryInterface prisonDao = new PrisonDao();
-    
+
     public User addManager(String adminId, User staff, String comment, String prisonId) {
         Prison prison = (Prison) prisonDao.findById(prisonId);
         User admin = (User) adminDao.findById(adminId);
-        if(admin == null){
+        if (admin == null) {
             throw new InvalidStaffException("invalid user");
         }
-        if(prison == null){
+        if (prison == null) {
             throw new InvalidPrisonException("invalid prison");
         }
-        if(!admin.getStaffRole().toString().equals("ADMIN")){
-            throw new NotAdminException("not admin");
+        if (!admin.getStaffRole().toString().equals("ADMIN")) {
+            throw new NotStaffException("not admin");
         }
-        if(!admin.getStaffWorkingStatus().toString().equals("ACTIVATED")){
+        if (!admin.getStaffWorkingStatus().toString().equals("ACTIVATED")) {
             throw new NotStaffActivatedException("staff not activated");
         }
         staff.setStaffRole(UserRole.MANAGER);
@@ -64,8 +65,14 @@ public class AdminService {
     public User fireManager(String userId, String comment, String adminId) {
         User admin = (User) adminDao.findById(adminId);
         User staff = (User) adminDao.findById(userId);
-        if(admin == null){
+        if (admin == null) {
             throw new InvalidStaffException("invalid admin");
+        }
+        if (!admin.getStaffRole().toString().equals("ADMIN")) {
+            throw new NotStaffException("not admin");
+        }
+        if (!admin.getStaffWorkingStatus().toString().equals("ACTIVATED")) {
+            throw new NotStaffActivatedException("staff not activated");
         }
         if (staff == null) {
             throw new InvalidStaffException("invalid user");
@@ -82,11 +89,20 @@ public class AdminService {
     public User suspendManager(String adminId, String userId, String comment) {
         User admin = (User) adminDao.findById(adminId);
         User staff = (User) adminDao.findById(userId);
+        if (admin == null) {
+            throw new InvalidStaffException("invalid admin");
+        }
+        if (!admin.getStaffRole().toString().equals("ADMIN")) {
+            throw new NotStaffException("not admin");
+        }
+        if (!admin.getStaffWorkingStatus().toString().equals("ACTIVATED")) {
+            throw new NotStaffActivatedException("staff not activated");
+        }
         if (staff == null) {
             throw new InvalidStaffException("invalid user");
         }
         if (staff.getStaffWorkingStatus().name().equalsIgnoreCase("SUSPENDED")) {
-            throw new AlreadyStaffFiredException("user already fired");
+            throw new AlreadyStaffSuspendedException("user already suspended");
         }
         staff.setStaffWorkingStatus(UserWorkingStatus.SUSPENDED);
         adminDao.update(staff);
@@ -100,5 +116,19 @@ public class AdminService {
 
     public Set<UserStatus> findAllUserTrack() {
         return statusDao.findAll();
+    }
+    public Prison addPrison(Prison prison, String adminId){
+        User admin = (User) adminDao.findById(adminId);
+        if (admin == null) {
+            throw new InvalidStaffException("invalid user");
+        }
+        if (!admin.getStaffRole().toString().equals("ADMIN")) {
+            throw new NotStaffException("not admin");
+        }
+        if (!admin.getStaffWorkingStatus().toString().equals("ACTIVATED")) {
+            throw new NotStaffActivatedException("staff not activated");
+        }
+        Prison p = (Prison) prisonDao.save(prison);
+        return p;
     }
 }

@@ -9,9 +9,9 @@ package com.mid_testing_project.exceptions;
  *
  * @author regis
  */
-public class NotAdminException extends RuntimeException{
+public class NotStaffException extends RuntimeException{
 
-    public NotAdminException(String string) {
+    public NotStaffException(String string) {
         super(string);
     }
     

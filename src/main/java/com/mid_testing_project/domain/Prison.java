@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -29,6 +30,8 @@ public class Prison implements Serializable{
     private List<User> staff = new ArrayList<>();
     @OneToMany(mappedBy = "prison")
     private List<Prisoner> prisoners = new ArrayList<>();
+    @Version
+    private long version = 1;
 
     public Prison() {
     }
@@ -63,6 +66,14 @@ public class Prison implements Serializable{
 
     public void setPrisoners(List<Prisoner> prisoners) {
         this.prisoners = prisoners;
+    }
+
+    public long getVersion() {
+        return version;
+    }
+
+    public void setVersion(long version) {
+        this.version = version;
     }
     
     

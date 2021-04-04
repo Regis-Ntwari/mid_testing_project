@@ -20,7 +20,10 @@ import com.mid_testing_project.exceptions.AlreadyReleasedPrisonerException;
 import com.mid_testing_project.exceptions.InvalidPrisonException;
 import com.mid_testing_project.exceptions.InvalidPrisonerException;
 import com.mid_testing_project.exceptions.InvalidStaffException;
+import com.mid_testing_project.exceptions.NotStaffActivatedException;
+import com.mid_testing_project.exceptions.NotStaffException;
 import com.mid_testing_project.interfaces.PrisonerDaoInterface;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -35,12 +38,24 @@ public class PrisonService {
     private final RepositoryInterface prisonerTrackDao = new PrisonerStatusTrackDao();
     private final UserRepositoryInterface userDao = new UserDao();
 
-    public Prisoner addPrisoner(String userId, Prisoner prisoner, String comment) {
+    public Prisoner addPrisoner(String userId, Prisoner prisoner, String comment, String prisonId) {
+        Prison prison = (Prison) prisonDao.findById(prisonId);
         User staff = (User) userDao.findById(userId);
+        if(prison == null){
+            throw new InvalidPrisonException("invalid prison");
+        }
         if (staff == null) {
             throw new InvalidStaffException("staff does not exist");
         }
+        if(!staff.getStaffRole().toString().equals("MANAGER")){
+            throw new NotStaffException("user not manager");
+        }
+        if(!staff.getStaffWorkingStatus().toString().equals("ACTIVATED")){
+            throw new NotStaffActivatedException("manager not activated");
+        }
         prisoner.setPrisonerStatus(PrisonerStatus.INCARCERATED);
+        prisoner.setEntryDate(LocalDate.now());
+        prisoner.setPrison(prison);
         Prisoner p = (Prisoner) prisonerDao.save(prisoner);
         prisonerTrackDao.save(
                 new PrisonerStatusTrack(
@@ -60,6 +75,12 @@ public class PrisonService {
         }
         if (staff == null) {
             throw new InvalidStaffException("invalid user id");
+        }
+        if(!staff.getStaffRole().toString().equals("MANAGER")){
+            throw new NotStaffException("user not manager");
+        }
+        if(!staff.getStaffWorkingStatus().toString().equals("ACTIVATED")){
+            throw new NotStaffActivatedException("manager not activated");
         }
         if (prisoner.getPrisonerStatus().name().equalsIgnoreCase("RELEASED")) {
             throw new AlreadyReleasedPrisonerException("This prisoner is already released");

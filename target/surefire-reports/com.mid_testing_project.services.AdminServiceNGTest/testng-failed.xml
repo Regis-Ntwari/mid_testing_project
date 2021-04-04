@@ -5,9 +5,9 @@
     <classes>
       <class name="com.mid_testing_project.services.AdminServiceNGTest">
         <methods>
+          <include name="testSuspendManagerAlreadySuspended"/>
           <include name="initializeDatabase"/>
           <include name="cleanTables"/>
-          <include name="testAddManagerNotAdmin"/>
           <include name="populateTables"/>
         </methods>
       </class> <!-- com.mid_testing_project.services.AdminServiceNGTest -->

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.mid_testing_project.services.AdminServiceNGTest
+Test set: com.mid_testing_project.services.ManagerServiceNGTest
 -------------------------------------------------------------------------------
-Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.83 sec
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.548 sec
