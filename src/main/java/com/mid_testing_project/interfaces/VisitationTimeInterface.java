@@ -5,6 +5,7 @@
  */
 package com.mid_testing_project.interfaces;
 
+import com.mid_testing_project.domain.VisitationTimeStatus;
 import java.util.Set;
 
 /**
@@ -13,5 +14,5 @@ import java.util.Set;
  * @param <T>
  */
 public interface VisitationTimeInterface<T> extends RepositoryInterface<T> {
-    Set<T> findAllInUseTime();
+    Set<T> findAllTimeByStatus(VisitationTimeStatus status);
 }

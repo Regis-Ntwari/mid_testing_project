@@ -19,6 +19,17 @@ public class Visitor implements Serializable{
     private String visitorPhoneNumber;
     private String visitorEmail;
 
+    public Visitor() {
+    }
+
+    public Visitor(String visitorFirstName, String visitorLastName, String visitorPhoneNumber, String visitorEmail) {
+        this.visitorFirstName = visitorFirstName;
+        this.visitorLastName = visitorLastName;
+        this.visitorPhoneNumber = visitorPhoneNumber;
+        this.visitorEmail = visitorEmail;
+    }
+
+    
     public String getVisitorFirstName() {
         return visitorFirstName;
     }

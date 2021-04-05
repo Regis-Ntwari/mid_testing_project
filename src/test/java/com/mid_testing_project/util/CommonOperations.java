@@ -76,8 +76,10 @@ public class CommonOperations {
                                                     Operations.insertInto("VISITATIONTIME")
                                                     .columns("ID", "VISITSTARTTIME", "VISITENDTIME", 
                                                             "VISITATIONDAY", "VISITATIONTIMESTATUS", "VERSION")
-                                                    .values("V-01", "8:00", "17:00", "TUESDAY", "IN_USE", "1")
-                                                    .values("V-02", "9:00", "16:00", "FRIDAY", "NOT_IN_USE", "1")
+                                                    .values("V-01", "08:00", "22:00", "MONDAY", "IN_USE", "1")
+                                                    .values("V-04", "08:00", "22:00", "TUESDAY", "IN_USE", "1")
+                                                    .values("V-03", "08:00", "16:00", "MONDAY", "IN_USE", "1")
+                                                    .values("V-02", "09:00", "16:00", "FRIDAY", "NOT_IN_USE", "1")
                                                     .build(),
                                                     Operations.insertInto("VISITATION")
                                                     .columns("VISITORFIRSTNAME", "VISITORLASTNAME", 

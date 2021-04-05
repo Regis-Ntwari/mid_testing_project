@@ -11,6 +11,7 @@ import com.mid_testing_project.domain.VisitationTimeStatus;
 import com.mid_testing_project.exceptions.AlreadyNotInUseTimeException;
 import com.mid_testing_project.exceptions.InvalidVisitationTimeException;
 import com.mid_testing_project.interfaces.VisitationTimeInterface;
+import java.util.Set;
 
 /**
  *
@@ -38,5 +39,11 @@ public class VisitationTimeService {
         time.setVisitationTimeStatus(VisitationTimeStatus.NOT_IN_USE);
         timeDao.update(time);
         return time;
+    }
+    public Set<VisitationTime> findAllInUseTime(){
+        return timeDao.findAllTimeByStatus(VisitationTimeStatus.IN_USE);
+    }
+    public Set<VisitationTime> findAllNotInUseTime(){
+        return timeDao.findAllTimeByStatus(VisitationTimeStatus.IN_USE);
     }
 }

@@ -16,6 +16,7 @@ import com.mid_testing_project.domain.Prisoner;
 import com.mid_testing_project.domain.Visitation;
 import com.mid_testing_project.domain.VisitationTime;
 import com.mid_testing_project.domain.Visitor;
+import com.mid_testing_project.exceptions.DateNotYetOccurredException;
 import com.mid_testing_project.exceptions.InvalidPrisonException;
 import com.mid_testing_project.exceptions.InvalidPrisonerException;
 import com.mid_testing_project.exceptions.InvalidVisitationDateException;
@@ -51,11 +52,9 @@ public class VisitationService {
             throw new InvalidVisitationTimeException("time does not exist");
         }
         LocalDateTime startTime = LocalDateTime.parse(
-                LocalDate.now().toString() + " " + time.getVisitStartTime(),
-                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:MM"));
+                LocalDate.now().toString() + "T" + time.getVisitStartTime());
         LocalDateTime endTime = LocalDateTime.parse(
-                LocalDate.now().toString() + " " + time.getVisitEndTime(),
-                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:MM"));
+                LocalDate.now().toString() + "T" + time.getVisitEndTime());
         if (!LocalDate.now().getDayOfWeek().toString().equals(time.getVisitationDay())) {
             throw new InvalidVisitationDateException("date is not enabled");
         }
@@ -78,17 +77,13 @@ public class VisitationService {
         }
         return visitationDao.findAllVisitations(prison);
     }
-    public Set<Visitation> findAllTodayVisitations(String prisonId) {
-        Prison prison = (Prison) prisonDao.findById(prisonId);
-        if (prison == null) {
-            throw new InvalidPrisonException("prison does not exist");
-        }
-        return visitationDao.findAllByToday(prison);
-    }
     public Set<Visitation> findAllVisitationsOnCertainDate(LocalDate date, String prisonId) {
         Prison prison = (Prison) prisonDao.findById(prisonId);
         if (prison == null) {
             throw new InvalidPrisonException("prison does not exist");
+        }
+        if(date.isAfter(LocalDate.now())){
+            throw new DateNotYetOccurredException("date not yet occurred");
         }
         return visitationDao.findAllVisitationsByCertainDate(date, prison);
     }

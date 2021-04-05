@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.mid_testing_project.services.VisitationServiceNGTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.236 sec

@@ -7,6 +7,7 @@ package com.mid_testing_project.dao;
 
 import com.mid_testing_project.interfaces.VisitationTimeInterface;
 import com.mid_testing_project.domain.VisitationTime;
+import com.mid_testing_project.domain.VisitationTimeStatus;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -76,13 +77,13 @@ public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime
     }
 
     @Override
-    public Set<VisitationTime> findAllInUseTime() {
+    public Set<VisitationTime> findAllTimeByStatus(VisitationTimeStatus status) {
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
         Root<VisitationTime> root = query.from(VisitationTime.class);
         
-        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), "IN_USE"));
+        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), status));
         
         List<VisitationTime> allInUseTimes = session.createQuery(query).getResultList();
         session.close();
