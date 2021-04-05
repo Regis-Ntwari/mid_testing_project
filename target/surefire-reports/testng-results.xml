@@ -1,101 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="23" passed="23">
+<testng-results skipped="0" failed="0" ignored="0" total="13" passed="13">
   <reporter-output>
   </reporter-output>
-  <suite name="com.mid_testing_project.services.AdminServiceNGTest" duration-ms="7124" started-at="2021-04-04T10:24:40 CAT" finished-at="2021-04-04T10:24:47 CAT">
+  <suite name="com.mid_testing_project.services.PrisonServiceNGTest" duration-ms="6038" started-at="2021-04-05T18:26:13 CAT" finished-at="2021-04-05T18:26:19 CAT">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="7124" started-at="2021-04-04T10:24:40 CAT" finished-at="2021-04-04T10:24:47 CAT">
-      <class name="com.mid_testing_project.services.AdminServiceNGTest">
-        <test-method status="PASS" signature="initializeDatabase()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="initializeDatabase" is-config="true" duration-ms="3736" started-at="2021-04-04T10:24:40 CAT" finished-at="2021-04-04T10:24:44 CAT">
+    <test name="Command line test" duration-ms="6038" started-at="2021-04-05T18:26:13 CAT" finished-at="2021-04-05T18:26:19 CAT">
+      <class name="com.mid_testing_project.services.PrisonServiceNGTest">
+        <test-method status="PASS" signature="initializeDatabase()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="initializeDatabase" is-config="true" duration-ms="3694" started-at="2021-04-05T18:26:13 CAT" finished-at="2021-04-05T18:26:17 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeDatabase -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="87" started-at="2021-04-04T10:24:44 CAT" finished-at="2021-04-04T10:24:44 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="103" started-at="2021-04-05T18:26:17 CAT" finished-at="2021-04-05T18:26:17 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testAddManager()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testAddManager" duration-ms="188" started-at="2021-04-04T10:24:44 CAT" finished-at="2021-04-04T10:24:44 CAT">
+        <test-method status="PASS" signature="testAddPrisoner()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testAddPrisoner" duration-ms="187" started-at="2021-04-05T18:26:17 CAT" finished-at="2021-04-05T18:26:17 CAT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAddManager -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="64" started-at="2021-04-04T10:24:44 CAT" finished-at="2021-04-04T10:24:44 CAT">
+        </test-method> <!-- testAddPrisoner -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="75" started-at="2021-04-05T18:26:17 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="65" started-at="2021-04-04T10:24:44 CAT" finished-at="2021-04-04T10:24:44 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="76" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testAddManagerAdminNotActivated()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testAddManagerAdminNotActivated" duration-ms="6" started-at="2021-04-04T10:24:44 CAT" finished-at="2021-04-04T10:24:44 CAT">
-          <exception class="com.mid_testing_project.exceptions.NotStaffActivatedException">
-            <message>
-              <![CDATA[staff not activated]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.NotStaffActivatedException: staff not activated
-at com.mid_testing_project.services.AdminService.addManager(AdminService.java:54)
-at com.mid_testing_project.services.AdminServiceNGTest.testAddManagerAdminNotActivated(AdminServiceNGTest.java:110)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.NotStaffActivatedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddManagerAdminNotActivated -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="37" started-at="2021-04-04T10:24:44 CAT" finished-at="2021-04-04T10:24:44 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="77" started-at="2021-04-04T10:24:44 CAT" finished-at="2021-04-04T10:24:44 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testAddManagerInvalidAdmin()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testAddManagerInvalidAdmin" duration-ms="6" started-at="2021-04-04T10:24:44 CAT" finished-at="2021-04-04T10:24:44 CAT">
+        <test-method status="PASS" signature="testAddPrisonerInvalidManager()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testAddPrisonerInvalidManager" duration-ms="6" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <exception class="com.mid_testing_project.exceptions.InvalidStaffException">
             <message>
-              <![CDATA[invalid user]]>
+              <![CDATA[staff does not exist]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.InvalidStaffException: invalid user
-at com.mid_testing_project.services.AdminService.addManager(AdminService.java:45)
-at com.mid_testing_project.services.AdminServiceNGTest.testAddManagerInvalidAdmin(AdminServiceNGTest.java:74)
+              <![CDATA[com.mid_testing_project.exceptions.InvalidStaffException: staff does not exist
+at com.mid_testing_project.services.PrisonService.addPrisoner(PrisonService.java:48)
+at com.mid_testing_project.services.PrisonServiceNGTest.testAddPrisonerInvalidManager(PrisonServiceNGTest.java:88)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -138,24 +78,24 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           </exception> <!-- com.mid_testing_project.exceptions.InvalidStaffException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAddManagerInvalidAdmin -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="49" started-at="2021-04-04T10:24:44 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        </test-method> <!-- testAddPrisonerInvalidManager -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="49" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="77" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="77" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testAddManagerInvalidPrison()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testAddManagerInvalidPrison" duration-ms="9" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        <test-method status="PASS" signature="testAddPrisonerInvalidPrison()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testAddPrisonerInvalidPrison" duration-ms="8" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <exception class="com.mid_testing_project.exceptions.InvalidPrisonException">
             <message>
               <![CDATA[invalid prison]]>
             </message>
             <full-stacktrace>
               <![CDATA[com.mid_testing_project.exceptions.InvalidPrisonException: invalid prison
-at com.mid_testing_project.services.AdminService.addManager(AdminService.java:48)
-at com.mid_testing_project.services.AdminServiceNGTest.testAddManagerInvalidPrison(AdminServiceNGTest.java:86)
+at com.mid_testing_project.services.PrisonService.addPrisoner(PrisonService.java:45)
+at com.mid_testing_project.services.PrisonServiceNGTest.testAddPrisonerInvalidPrison(PrisonServiceNGTest.java:74)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -198,96 +138,24 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           </exception> <!-- com.mid_testing_project.exceptions.InvalidPrisonException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAddManagerInvalidPrison -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="47" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        </test-method> <!-- testAddPrisonerInvalidPrison -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="69" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="77" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testAddManagerNotAdmin()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testAddManagerNotAdmin" duration-ms="7" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
-          <exception class="com.mid_testing_project.exceptions.NotStaffException">
-            <message>
-              <![CDATA[not admin]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.NotStaffException: not admin
-at com.mid_testing_project.services.AdminService.addManager(AdminService.java:51)
-at com.mid_testing_project.services.AdminServiceNGTest.testAddManagerNotAdmin(AdminServiceNGTest.java:98)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.NotStaffException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddManagerNotAdmin -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="48" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testAddPrison()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testAddPrison" duration-ms="22" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddPrison -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="45" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="108" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testAddPrisonAdminNotActivated()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testAddPrisonAdminNotActivated" duration-ms="5" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        <test-method status="PASS" signature="testAddPrisonerManagerNotActivated()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testAddPrisonerManagerNotActivated" duration-ms="9" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <exception class="com.mid_testing_project.exceptions.NotStaffActivatedException">
             <message>
-              <![CDATA[staff not activated]]>
+              <![CDATA[manager not activated]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.NotStaffActivatedException: staff not activated
-at com.mid_testing_project.services.AdminService.addPrison(AdminService.java:129)
-at com.mid_testing_project.services.AdminServiceNGTest.testAddPrisonAdminNotActivated(AdminServiceNGTest.java:201)
+              <![CDATA[com.mid_testing_project.exceptions.NotStaffActivatedException: manager not activated
+at com.mid_testing_project.services.PrisonService.addPrisoner(PrisonService.java:54)
+at com.mid_testing_project.services.PrisonServiceNGTest.testAddPrisonerManagerNotActivated(PrisonServiceNGTest.java:114)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -330,84 +198,24 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           </exception> <!-- com.mid_testing_project.exceptions.NotStaffActivatedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAddPrisonAdminNotActivated -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="50" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        </test-method> <!-- testAddPrisonerManagerNotActivated -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="68" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="66" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testAddPrisonInvalidAdmin()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testAddPrisonInvalidAdmin" duration-ms="3" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
-          <exception class="com.mid_testing_project.exceptions.InvalidStaffException">
-            <message>
-              <![CDATA[invalid user]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.InvalidStaffException: invalid user
-at com.mid_testing_project.services.AdminService.addPrison(AdminService.java:123)
-at com.mid_testing_project.services.AdminServiceNGTest.testAddPrisonInvalidAdmin(AdminServiceNGTest.java:187)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.InvalidStaffException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddPrisonInvalidAdmin -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="42" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="44" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testAddPrisonNotAdmin()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testAddPrisonNotAdmin" duration-ms="4" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        <test-method status="PASS" signature="testAddPrisonerNotManager()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testAddPrisonerNotManager" duration-ms="8" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <exception class="com.mid_testing_project.exceptions.NotStaffException">
             <message>
-              <![CDATA[not admin]]>
+              <![CDATA[user not manager]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.NotStaffException: not admin
-at com.mid_testing_project.services.AdminService.addPrison(AdminService.java:126)
-at com.mid_testing_project.services.AdminServiceNGTest.testAddPrisonNotAdmin(AdminServiceNGTest.java:194)
+              <![CDATA[com.mid_testing_project.exceptions.NotStaffException: user not manager
+at com.mid_testing_project.services.PrisonService.addPrisoner(PrisonService.java:51)
+at com.mid_testing_project.services.PrisonServiceNGTest.testAddPrisonerNotManager(PrisonServiceNGTest.java:101)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -450,60 +258,240 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           </exception> <!-- com.mid_testing_project.exceptions.NotStaffException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAddPrisonNotAdmin -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="40" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        </test-method> <!-- testAddPrisonerNotManager -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="47" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="44" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:45 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="56" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFindAllPrisonerTrack()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testFindAllPrisonerTrack" duration-ms="209" started-at="2021-04-04T10:24:45 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        <test-method status="PASS" signature="testFindAllPrisoners()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testFindAllPrisoners" duration-ms="176" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFindAllPrisonerTrack -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="132" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        </test-method> <!-- testFindAllPrisoners -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="134" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:18 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="66" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="142" started-at="2021-04-05T18:26:18 CAT" finished-at="2021-04-05T18:26:19 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFindAllUserTrack()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testFindAllUserTrack" duration-ms="9" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        <test-method status="PASS" signature="testFindAllPrisonersInCertainPrison()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testFindAllPrisonersInCertainPrison" duration-ms="34" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFindAllUserTrack -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="46" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        </test-method> <!-- testFindAllPrisonersInCertainPrison -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="167" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="78" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFireManager()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testFireManager" duration-ms="44" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFireManager -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="45" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="69" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFireManagerAdminNotActivated()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testFireManagerAdminNotActivated" duration-ms="9" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <exception class="com.mid_testing_project.exceptions.NotStaffActivatedException">
+        <test-method status="PASS" signature="testFindAllPrisonersInCertainPrisonInvalidPrison()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testFindAllPrisonersInCertainPrisonInvalidPrison" duration-ms="2" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <exception class="com.mid_testing_project.exceptions.InvalidPrisonException">
             <message>
-              <![CDATA[staff not activated]]>
+              <![CDATA[prison does not exist]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.NotStaffActivatedException: staff not activated
-at com.mid_testing_project.services.AdminService.fireManager(AdminService.java:75)
-at com.mid_testing_project.services.AdminServiceNGTest.testFireManagerAdminNotActivated(AdminServiceNGTest.java:131)
+              <![CDATA[com.mid_testing_project.exceptions.InvalidPrisonException: prison does not exist
+at com.mid_testing_project.services.PrisonService.findAllPrisonersInCertainPrison(PrisonService.java:103)
+at com.mid_testing_project.services.PrisonServiceNGTest.testFindAllPrisonersInCertainPrisonInvalidPrison(PrisonServiceNGTest.java:150)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.mid_testing_project.exceptions.InvalidPrisonException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindAllPrisonersInCertainPrisonInvalidPrison -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="52" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanTables -->
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- populateTables -->
+        <test-method status="PASS" signature="testReleasePrisoner()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testReleasePrisoner" duration-ms="44" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReleasePrisoner -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="44" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanTables -->
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="43" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- populateTables -->
+        <test-method status="PASS" signature="testReleasePrisonerInvalidManager()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testReleasePrisonerInvalidManager" duration-ms="6" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <exception class="com.mid_testing_project.exceptions.InvalidStaffException">
+            <message>
+              <![CDATA[invalid user id]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.mid_testing_project.exceptions.InvalidStaffException: invalid user id
+at com.mid_testing_project.services.PrisonService.releasePrisoner(PrisonService.java:77)
+at com.mid_testing_project.services.PrisonServiceNGTest.testReleasePrisonerInvalidManager(PrisonServiceNGTest.java:130)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.mid_testing_project.exceptions.InvalidStaffException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReleasePrisonerInvalidManager -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="38" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanTables -->
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="44" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- populateTables -->
+        <test-method status="PASS" signature="testReleasePrisonerInvalidPrisoner()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testReleasePrisonerInvalidPrisoner" duration-ms="7" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <exception class="com.mid_testing_project.exceptions.InvalidPrisonerException">
+            <message>
+              <![CDATA[prisoner does not exist]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.mid_testing_project.exceptions.InvalidPrisonerException: prisoner does not exist
+at com.mid_testing_project.services.PrisonService.releasePrisoner(PrisonService.java:74)
+at com.mid_testing_project.services.PrisonServiceNGTest.testReleasePrisonerInvalidPrisoner(PrisonServiceNGTest.java:125)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.mid_testing_project.exceptions.InvalidPrisonerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReleasePrisonerInvalidPrisoner -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="48" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanTables -->
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- populateTables -->
+        <test-method status="PASS" signature="testReleasePrisonerManagerNotActivated()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testReleasePrisonerManagerNotActivated" duration-ms="14" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
+          <exception class="com.mid_testing_project.exceptions.NotStaffActivatedException">
+            <message>
+              <![CDATA[manager not activated]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.mid_testing_project.exceptions.NotStaffActivatedException: manager not activated
+at com.mid_testing_project.services.PrisonService.releasePrisoner(PrisonService.java:83)
+at com.mid_testing_project.services.PrisonServiceNGTest.testReleasePrisonerManagerNotActivated(PrisonServiceNGTest.java:140)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -546,204 +534,24 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           </exception> <!-- com.mid_testing_project.exceptions.NotStaffActivatedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFireManagerAdminNotActivated -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="64" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        </test-method> <!-- testReleasePrisonerManagerNotActivated -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="40" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="57" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="populateTables" is-config="true" duration-ms="44" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFireManagerAlreadyFired()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testFireManagerAlreadyFired" duration-ms="8" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <exception class="com.mid_testing_project.exceptions.AlreadyStaffFiredException">
-            <message>
-              <![CDATA[user already fired]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.AlreadyStaffFiredException: user already fired
-at com.mid_testing_project.services.AdminService.fireManager(AdminService.java:81)
-at com.mid_testing_project.services.AdminServiceNGTest.testFireManagerAlreadyFired(AdminServiceNGTest.java:141)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.AlreadyStaffFiredException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFireManagerAlreadyFired -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="44" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="44" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFireManagerInvalidAdmin()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testFireManagerInvalidAdmin" duration-ms="5" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <exception class="com.mid_testing_project.exceptions.InvalidStaffException">
-            <message>
-              <![CDATA[invalid admin]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.InvalidStaffException: invalid admin
-at com.mid_testing_project.services.AdminService.fireManager(AdminService.java:69)
-at com.mid_testing_project.services.AdminServiceNGTest.testFireManagerInvalidAdmin(AdminServiceNGTest.java:121)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.InvalidStaffException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFireManagerInvalidAdmin -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="40" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="44" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFireManagerInvalidManager()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testFireManagerInvalidManager" duration-ms="6" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <exception class="com.mid_testing_project.exceptions.InvalidStaffException">
-            <message>
-              <![CDATA[invalid user]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.InvalidStaffException: invalid user
-at com.mid_testing_project.services.AdminService.fireManager(AdminService.java:78)
-at com.mid_testing_project.services.AdminServiceNGTest.testFireManagerInvalidManager(AdminServiceNGTest.java:126)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.InvalidStaffException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFireManagerInvalidManager -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="50" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFireManagerNotAdmin()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testFireManagerNotAdmin" duration-ms="9" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        <test-method status="PASS" signature="testReleasePrisonerNotManager()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="testReleasePrisonerNotManager" duration-ms="8" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
           <exception class="com.mid_testing_project.exceptions.NotStaffException">
             <message>
-              <![CDATA[not admin]]>
+              <![CDATA[user not manager]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.NotStaffException: not admin
-at com.mid_testing_project.services.AdminService.fireManager(AdminService.java:72)
-at com.mid_testing_project.services.AdminServiceNGTest.testFireManagerNotAdmin(AdminServiceNGTest.java:136)
+              <![CDATA[com.mid_testing_project.exceptions.NotStaffException: user not manager
+at com.mid_testing_project.services.PrisonService.releasePrisoner(PrisonService.java:80)
+at com.mid_testing_project.services.PrisonServiceNGTest.testReleasePrisonerNotManager(PrisonServiceNGTest.java:135)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -786,324 +594,12 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           </exception> <!-- com.mid_testing_project.exceptions.NotStaffException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFireManagerNotAdmin -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="46" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:46 CAT">
+        </test-method> <!-- testReleasePrisonerNotManager -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.PrisonServiceNGTest@4566e5bd]" name="cleanTables" is-config="true" duration-ms="47" started-at="2021-04-05T18:26:19 CAT" finished-at="2021-04-05T18:26:19 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="44" started-at="2021-04-04T10:24:46 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testSuspendManager()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testSuspendManager" duration-ms="33" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSuspendManager -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="44" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testSuspendManagerAdminNotActivated()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testSuspendManagerAdminNotActivated" duration-ms="9" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <exception class="com.mid_testing_project.exceptions.NotStaffActivatedException">
-            <message>
-              <![CDATA[staff not activated]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.NotStaffActivatedException: staff not activated
-at com.mid_testing_project.services.AdminService.suspendManager(AdminService.java:99)
-at com.mid_testing_project.services.AdminServiceNGTest.testSuspendManagerAdminNotActivated(AdminServiceNGTest.java:162)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.NotStaffActivatedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSuspendManagerAdminNotActivated -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="46" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testSuspendManagerAlreadySuspended()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testSuspendManagerAlreadySuspended" duration-ms="13" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <exception class="com.mid_testing_project.exceptions.AlreadyStaffSuspendedException">
-            <message>
-              <![CDATA[user already suspended]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.AlreadyStaffSuspendedException: user already suspended
-at com.mid_testing_project.services.AdminService.suspendManager(AdminService.java:105)
-at com.mid_testing_project.services.AdminServiceNGTest.testSuspendManagerAlreadySuspended(AdminServiceNGTest.java:172)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.AlreadyStaffSuspendedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSuspendManagerAlreadySuspended -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="76" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testSuspendManagerInvalidAdmin()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testSuspendManagerInvalidAdmin" duration-ms="7" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <exception class="com.mid_testing_project.exceptions.InvalidStaffException">
-            <message>
-              <![CDATA[invalid admin]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.InvalidStaffException: invalid admin
-at com.mid_testing_project.services.AdminService.suspendManager(AdminService.java:93)
-at com.mid_testing_project.services.AdminServiceNGTest.testSuspendManagerInvalidAdmin(AdminServiceNGTest.java:152)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.InvalidStaffException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSuspendManagerInvalidAdmin -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="49" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="89" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testSuspendManagerInvalidManager()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testSuspendManagerInvalidManager" duration-ms="8" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <exception class="com.mid_testing_project.exceptions.InvalidStaffException">
-            <message>
-              <![CDATA[invalid user]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.InvalidStaffException: invalid user
-at com.mid_testing_project.services.AdminService.suspendManager(AdminService.java:102)
-at com.mid_testing_project.services.AdminServiceNGTest.testSuspendManagerInvalidManager(AdminServiceNGTest.java:157)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.InvalidStaffException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSuspendManagerInvalidManager -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="61" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="populateTables" is-config="true" duration-ms="85" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testSuspendManagerNotAdmin()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="testSuspendManagerNotAdmin" duration-ms="10" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <exception class="com.mid_testing_project.exceptions.NotStaffException">
-            <message>
-              <![CDATA[not admin]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.NotStaffException: not admin
-at com.mid_testing_project.services.AdminService.suspendManager(AdminService.java:96)
-at com.mid_testing_project.services.AdminServiceNGTest.testSuspendManagerNotAdmin(AdminServiceNGTest.java:167)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.NotStaffException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSuspendManagerNotAdmin -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.AdminServiceNGTest@1ed4004b]" name="cleanTables" is-config="true" duration-ms="80" started-at="2021-04-04T10:24:47 CAT" finished-at="2021-04-04T10:24:47 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-      </class> <!-- com.mid_testing_project.services.AdminServiceNGTest -->
+      </class> <!-- com.mid_testing_project.services.PrisonServiceNGTest -->
     </test> <!-- Command line test -->
-  </suite> <!-- com.mid_testing_project.services.AdminServiceNGTest -->
+  </suite> <!-- com.mid_testing_project.services.PrisonServiceNGTest -->
 </testng-results>

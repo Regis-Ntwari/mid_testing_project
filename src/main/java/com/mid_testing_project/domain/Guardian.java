@@ -20,6 +20,13 @@ public class Guardian implements Serializable{
     public Guardian() {
     }
 
+    public Guardian(String guardianName, String telephone) {
+        this.guardianName = guardianName;
+        this.telephone = telephone;
+    }
+    
+    
+
     public String getGuardianName() {
         return guardianName;
     }

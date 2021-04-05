@@ -62,7 +62,7 @@ public class PrisonService {
                         prisoner,
                         prisoner.getPrisonerStatus(),
                         staff,
-                        LocalDateTime.MIN,
+                        LocalDateTime.now(),
                         comment));
         return p;
     }
@@ -92,7 +92,7 @@ public class PrisonService {
                         prisoner,
                         prisoner.getPrisonerStatus(),
                         staff,
-                        LocalDateTime.MIN,
+                        LocalDateTime.now(),
                         comment));
         return prisoner;
     }
