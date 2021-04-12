@@ -20,13 +20,11 @@ import com.mid_testing_project.exceptions.DateNotYetOccurredException;
 import com.mid_testing_project.exceptions.InvalidPrisonException;
 import com.mid_testing_project.exceptions.InvalidPrisonerException;
 import com.mid_testing_project.exceptions.InvalidVisitationDateException;
-import com.mid_testing_project.exceptions.InvalidVisitationTimeException;
 import com.mid_testing_project.exceptions.OutOfBoundsVisitationTimeException;
 import com.mid_testing_project.interfaces.PrisonerDaoInterface;
 import com.mid_testing_project.interfaces.RepositoryInterface;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
 /**
@@ -41,24 +39,20 @@ public class VisitationService {
     private final RepositoryInterface prisonDao = new PrisonDao();
 
     public Visitation visit(Visitor visitor,
-            String prisonerId,
-            String visitationTimeId) {
+            String prisonerId) {
         Prisoner prisoner = (Prisoner) prisonerDao.findById(prisonerId);
-        VisitationTime time = (VisitationTime) visitationTimeDao.findById(visitationTimeId);
+        VisitationTime time = (VisitationTime) visitationTimeDao.findByInUseTime();
         if (prisoner == null) {
             throw new InvalidPrisonerException("prisoner does not exist");
-        }
-        if (time == null) {
-            throw new InvalidVisitationTimeException("time does not exist");
         }
         LocalDateTime startTime = LocalDateTime.parse(
                 LocalDate.now().toString() + "T" + time.getVisitStartTime());
         LocalDateTime endTime = LocalDateTime.parse(
                 LocalDate.now().toString() + "T" + time.getVisitEndTime());
-        if (!LocalDate.now().getDayOfWeek().toString().equals(time.getVisitationDay())) {
-            throw new InvalidVisitationDateException("date is not enabled");
-        }
-        if(LocalDateTime.now().isAfter(endTime) || LocalDateTime.now().isBefore(startTime)){
+//        if (!LocalDate.now().getDayOfWeek().toString().equals(time.getVisitationDay())) {
+//            throw new InvalidVisitationDateException("date is not enabled");
+//        }
+        if (LocalDateTime.now().isAfter(endTime) || LocalDateTime.now().isBefore(startTime)) {
             throw new OutOfBoundsVisitationTimeException("time is out of boundaries");
         }
         Visitation visitation = new Visitation();
@@ -77,12 +71,13 @@ public class VisitationService {
         }
         return visitationDao.findAllVisitations(prison);
     }
+
     public Set<Visitation> findAllVisitationsOnCertainDate(LocalDate date, String prisonId) {
         Prison prison = (Prison) prisonDao.findById(prisonId);
         if (prison == null) {
             throw new InvalidPrisonException("prison does not exist");
         }
-        if(date.isAfter(LocalDate.now())){
+        if (date.isAfter(LocalDate.now())) {
             throw new DateNotYetOccurredException("date not yet occurred");
         }
         return visitationDao.findAllVisitationsByCertainDate(date, prison);

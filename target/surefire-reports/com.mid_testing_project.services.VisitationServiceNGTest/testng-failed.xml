@@ -6,7 +6,7 @@
       <class name="com.mid_testing_project.services.VisitationServiceNGTest">
         <methods>
           <include name="initializeDatabase"/>
-          <include name="testVisitInvalidTime"/>
+          <include name="testVisit"/>
           <include name="cleanTables"/>
           <include name="populateTables"/>
         </methods>

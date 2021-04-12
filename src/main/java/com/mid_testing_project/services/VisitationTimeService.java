@@ -40,10 +40,10 @@ public class VisitationTimeService {
         timeDao.update(time);
         return time;
     }
-    public Set<VisitationTime> findAllInUseTime(){
-        return timeDao.findAllTimeByStatus(VisitationTimeStatus.IN_USE);
+    public VisitationTime findAllInUseTime(){
+        return (VisitationTime) timeDao.findByInUseTime();
     }
     public Set<VisitationTime> findAllNotInUseTime(){
-        return timeDao.findAllTimeByStatus(VisitationTimeStatus.IN_USE);
+        return timeDao.findNotInUseTime();
     }
 }

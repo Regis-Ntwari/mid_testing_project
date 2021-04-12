@@ -56,7 +56,7 @@ public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime
     public VisitationTime delete(VisitationTime t) {
         session = HibernateUtilities.getSessionFactory().openSession();
         session.beginTransaction();
-        session.update(t);
+        session.delete(t);
         session.getTransaction().commit();
         session.close();
         return t;
@@ -77,18 +77,31 @@ public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime
     }
 
     @Override
-    public Set<VisitationTime> findAllTimeByStatus(VisitationTimeStatus status) {
+    public VisitationTime findByInUseTime() {
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
         Root<VisitationTime> root = query.from(VisitationTime.class);
         
-        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), status));
+        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), VisitationTimeStatus.IN_USE));
         
-        List<VisitationTime> allInUseTimes = session.createQuery(query).getResultList();
+        VisitationTime time = session.createQuery(query).getSingleResult();
         session.close();
-        return new HashSet<>(allInUseTimes);
+        return time;
     }
 
+    @Override
+    public Set<VisitationTime> findNotInUseTime() {
+        session = HibernateUtilities.getSessionFactory().openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
+        Root<VisitationTime> root = query.from(VisitationTime.class);
+        
+        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), VisitationTimeStatus.IN_USE));
+        
+        List<VisitationTime> time = session.createQuery(query).getResultList();
+        session.close();
+        return new HashSet<>(time);
+    }
     
 }

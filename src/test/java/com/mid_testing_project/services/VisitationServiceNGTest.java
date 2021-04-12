@@ -51,31 +51,25 @@ public class VisitationServiceNGTest {
     @Test
     public void testVisit() {
         Visitation visit = visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"),
-                "P-04", "V-01");
+                "P-04");
         Assert.assertEquals(visit.getVersion(), 1);
     }
 
     @Test(expectedExceptions = InvalidPrisonerException.class)
     public void testVisitInvalidPrisoner() {
         visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"),
-                "P-22", "V-01");
+                "P-22");
     }
-
-    @Test(expectedExceptions = InvalidVisitationTimeException.class)
-    public void testVisitInvalidTime() {
-        visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"),
-                "P-04", "V-20");
-    }
-    @Test(expectedExceptions = OutOfBoundsVisitationTimeException.class)
-    public void testVisitOutOfBoundsVisitation(){
-        visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"), 
-                "P-04", "V-03");
-    }
-    @Test(expectedExceptions = InvalidVisitationDateException.class)
-    public void testVisitNotVisitationDay(){
-        visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"), 
-                "P-04", "V-04");
-    }
+//    @Test(expectedExceptions = OutOfBoundsVisitationTimeException.class)
+//    public void testVisitOutOfBoundsVisitation(){
+//        visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"), 
+//                "P-04");
+//    }
+//    @Test(expectedExceptions = InvalidVisitationDateException.class)
+//    public void testVisitNotVisitationDay(){
+//        visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"), 
+//                "P-04");
+//    }
 
     @Test
     public void testFindAllVisitations() {

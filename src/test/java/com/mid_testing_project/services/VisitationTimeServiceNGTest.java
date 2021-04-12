@@ -68,8 +68,8 @@ public class VisitationTimeServiceNGTest {
 
     @Test
     public void testFindAllInUseTime() {
-        Set<VisitationTime> times = timeService.findAllInUseTime();
-        Assert.assertEquals(times.size(), 1);
+        VisitationTime times = timeService.findAllInUseTime();
+        Assert.assertEquals(times.getId(), "V-01");
     }
     
     @Test
