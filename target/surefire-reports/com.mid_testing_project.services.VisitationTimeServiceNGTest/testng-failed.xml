@@ -6,7 +6,12 @@
       <class name="com.mid_testing_project.services.VisitationTimeServiceNGTest">
         <methods>
           <include name="populateTables"/>
+          <include name="testDisableVisitationTime"/>
           <include name="testFindAllInUseTime"/>
+          <include name="testFindAllNotInUseTime"/>
+          <include name="testAddVisitationTime"/>
+          <include name="testDisableVisitationTimeAlreadyDisabled"/>
+          <include name="testDisableVisitationTimeInvalidTimeId"/>
           <include name="cleanTables"/>
           <include name="initializeDatabase"/>
         </methods>

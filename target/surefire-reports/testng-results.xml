@@ -1,41 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="com.mid_testing_project.services.VisitationServiceNGTest" duration-ms="5305" started-at="2021-04-12T12:12:38 CAT" finished-at="2021-04-12T12:12:43 CAT">
+  <suite name="com.mid_testing_project.services.VisitationTimeServiceNGTest" duration-ms="5142" started-at="2021-04-13T11:52:12 CAT" finished-at="2021-04-13T11:52:17 CAT">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="5305" started-at="2021-04-12T12:12:38 CAT" finished-at="2021-04-12T12:12:43 CAT">
-      <class name="com.mid_testing_project.services.VisitationServiceNGTest">
-        <test-method status="PASS" signature="initializeDatabase()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="initializeDatabase" is-config="true" duration-ms="3714" started-at="2021-04-12T12:12:38 CAT" finished-at="2021-04-12T12:12:42 CAT">
+    <test name="Command line test" duration-ms="5142" started-at="2021-04-13T11:52:12 CAT" finished-at="2021-04-13T11:52:17 CAT">
+      <class name="com.mid_testing_project.services.VisitationTimeServiceNGTest">
+        <test-method status="PASS" signature="initializeDatabase()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="initializeDatabase" is-config="true" duration-ms="3749" started-at="2021-04-13T11:52:12 CAT" finished-at="2021-04-13T11:52:16 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeDatabase -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="populateTables" is-config="true" duration-ms="96" started-at="2021-04-12T12:12:42 CAT" finished-at="2021-04-12T12:12:42 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="populateTables" is-config="true" duration-ms="98" started-at="2021-04-13T11:52:16 CAT" finished-at="2021-04-13T11:52:16 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFindAllVisitations()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="testFindAllVisitations" duration-ms="341" started-at="2021-04-12T12:12:42 CAT" finished-at="2021-04-12T12:12:42 CAT">
+        <test-method status="PASS" signature="testAddVisitationTime()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="testAddVisitationTime" duration-ms="208" started-at="2021-04-13T11:52:16 CAT" finished-at="2021-04-13T11:52:16 CAT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFindAllVisitations -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="cleanTables" is-config="true" duration-ms="109" started-at="2021-04-12T12:12:42 CAT" finished-at="2021-04-12T12:12:42 CAT">
+        </test-method> <!-- testAddVisitationTime -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="cleanTables" is-config="true" duration-ms="76" started-at="2021-04-13T11:52:16 CAT" finished-at="2021-04-13T11:52:16 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="populateTables" is-config="true" duration-ms="87" started-at="2021-04-12T12:12:42 CAT" finished-at="2021-04-12T12:12:42 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="populateTables" is-config="true" duration-ms="77" started-at="2021-04-13T11:52:16 CAT" finished-at="2021-04-13T11:52:16 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFindAllVisitationsInvalidPrison()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="testFindAllVisitationsInvalidPrison" duration-ms="9" started-at="2021-04-12T12:12:42 CAT" finished-at="2021-04-12T12:12:42 CAT">
-          <exception class="com.mid_testing_project.exceptions.InvalidPrisonException">
+        <test-method status="PASS" signature="testDisableVisitationTime()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="testDisableVisitationTime" duration-ms="21" started-at="2021-04-13T11:52:16 CAT" finished-at="2021-04-13T11:52:16 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDisableVisitationTime -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="cleanTables" is-config="true" duration-ms="45" started-at="2021-04-13T11:52:16 CAT" finished-at="2021-04-13T11:52:16 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanTables -->
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="populateTables" is-config="true" duration-ms="130" started-at="2021-04-13T11:52:16 CAT" finished-at="2021-04-13T11:52:17 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- populateTables -->
+        <test-method status="PASS" signature="testDisableVisitationTimeAlreadyDisabled()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="testDisableVisitationTimeAlreadyDisabled" duration-ms="4" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
+          <exception class="com.mid_testing_project.exceptions.AlreadyNotInUseTimeException">
             <message>
-              <![CDATA[prison does not exist]]>
+              <![CDATA[time is not in use]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.InvalidPrisonException: prison does not exist
-at com.mid_testing_project.services.VisitationService.findAllVisitations(VisitationService.java:70)
-at com.mid_testing_project.services.VisitationServiceNGTest.testFindAllVisitationsInvalidPrison(VisitationServiceNGTest.java:81)
+              <![CDATA[com.mid_testing_project.exceptions.AlreadyNotInUseTimeException: time is not in use
+at com.mid_testing_project.services.VisitationTimeService.disableVisitationTime(VisitationTimeService.java:41)
+at com.mid_testing_project.services.VisitationTimeServiceNGTest.testDisableVisitationTimeAlreadyDisabled(VisitationTimeServiceNGTest.java:70)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -75,39 +87,27 @@ at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 ]]>
             </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.InvalidPrisonException -->
+          </exception> <!-- com.mid_testing_project.exceptions.AlreadyNotInUseTimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFindAllVisitationsInvalidPrison -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="cleanTables" is-config="true" duration-ms="179" started-at="2021-04-12T12:12:42 CAT" finished-at="2021-04-12T12:12:43 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="populateTables" is-config="true" duration-ms="88" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFindAllVisitationsOnCertainDate()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="testFindAllVisitationsOnCertainDate" duration-ms="33" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFindAllVisitationsOnCertainDate -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="cleanTables" is-config="true" duration-ms="76" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
+        </test-method> <!-- testDisableVisitationTimeAlreadyDisabled -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="cleanTables" is-config="true" duration-ms="40" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="populateTables" is-config="true" duration-ms="66" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="populateTables" is-config="true" duration-ms="155" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFindAllVisitationsOnCertainDateInvalidDate()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="testFindAllVisitationsOnCertainDateInvalidDate" duration-ms="4" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
-          <exception class="com.mid_testing_project.exceptions.DateNotYetOccurredException">
+        <test-method status="PASS" signature="testDisableVisitationTimeInvalidTimeId()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="testDisableVisitationTimeInvalidTimeId" duration-ms="3" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
+          <exception class="com.mid_testing_project.exceptions.InvalidVisitationTimeException">
             <message>
-              <![CDATA[date not yet occurred]]>
+              <![CDATA[time does not exist]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.DateNotYetOccurredException: date not yet occurred
-at com.mid_testing_project.services.VisitationService.findAllVisitationsOnCertainDate(VisitationService.java:81)
-at com.mid_testing_project.services.VisitationServiceNGTest.testFindAllVisitationsOnCertainDateInvalidDate(VisitationServiceNGTest.java:97)
+              <![CDATA[com.mid_testing_project.exceptions.InvalidVisitationTimeException: time does not exist
+at com.mid_testing_project.services.VisitationTimeService.disableVisitationTime(VisitationTimeService.java:38)
+at com.mid_testing_project.services.VisitationTimeServiceNGTest.testDisableVisitationTimeInvalidTimeId(VisitationTimeServiceNGTest.java:66)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -147,195 +147,39 @@ at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 ]]>
             </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.DateNotYetOccurredException -->
+          </exception> <!-- com.mid_testing_project.exceptions.InvalidVisitationTimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFindAllVisitationsOnCertainDateInvalidDate -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="cleanTables" is-config="true" duration-ms="74" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
+        </test-method> <!-- testDisableVisitationTimeInvalidTimeId -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="cleanTables" is-config="true" duration-ms="51" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="populateTables" is-config="true" duration-ms="78" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="populateTables" is-config="true" duration-ms="44" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testFindAllVisitationsOnCertainDateInvalidPrison()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="testFindAllVisitationsOnCertainDateInvalidPrison" duration-ms="4" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
-          <exception class="com.mid_testing_project.exceptions.InvalidPrisonException">
-            <message>
-              <![CDATA[prison does not exist]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.InvalidPrisonException: prison does not exist
-at com.mid_testing_project.services.VisitationService.findAllVisitationsOnCertainDate(VisitationService.java:78)
-at com.mid_testing_project.services.VisitationServiceNGTest.testFindAllVisitationsOnCertainDateInvalidPrison(VisitationServiceNGTest.java:92)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.InvalidPrisonException -->
+        <test-method status="PASS" signature="testFindAllInUseTime()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="testFindAllInUseTime" duration-ms="236" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFindAllVisitationsOnCertainDateInvalidPrison -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="cleanTables" is-config="true" duration-ms="51" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
+        </test-method> <!-- testFindAllInUseTime -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="cleanTables" is-config="true" duration-ms="50" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="populateTables" is-config="true" duration-ms="54" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
+        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testVisitInvalidPrisoner()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="testVisitInvalidPrisoner" duration-ms="13" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
-          <exception class="com.mid_testing_project.exceptions.InvalidPrisonerException">
-            <message>
-              <![CDATA[prisoner does not exist]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.InvalidPrisonerException: prisoner does not exist
-at com.mid_testing_project.services.VisitationService.visit(VisitationService.java:46)
-at com.mid_testing_project.services.VisitationServiceNGTest.testVisitInvalidPrisoner(VisitationServiceNGTest.java:60)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.InvalidPrisonerException -->
+        <test-method status="PASS" signature="testFindAllNotInUseTime()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="testFindAllNotInUseTime" duration-ms="8" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testVisitInvalidPrisoner -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="cleanTables" is-config="true" duration-ms="53" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
+        </test-method> <!-- testFindAllNotInUseTime -->
+        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationTimeServiceNGTest@3f49dace]" name="cleanTables" is-config="true" duration-ms="48" started-at="2021-04-13T11:52:17 CAT" finished-at="2021-04-13T11:52:17 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanTables -->
-        <test-method status="PASS" signature="populateTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="populateTables" is-config="true" duration-ms="55" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- populateTables -->
-        <test-method status="PASS" signature="testVisitOutOfBoundsVisitation()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="testVisitOutOfBoundsVisitation" duration-ms="9" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
-          <exception class="com.mid_testing_project.exceptions.OutOfBoundsVisitationTimeException">
-            <message>
-              <![CDATA[time is out of boundaries]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.mid_testing_project.exceptions.OutOfBoundsVisitationTimeException: time is out of boundaries
-at com.mid_testing_project.services.VisitationService.visit(VisitationService.java:56)
-at com.mid_testing_project.services.VisitationServiceNGTest.testVisitOutOfBoundsVisitation(VisitationServiceNGTest.java:65)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.mid_testing_project.exceptions.OutOfBoundsVisitationTimeException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testVisitOutOfBoundsVisitation -->
-        <test-method status="PASS" signature="cleanTables()[pri:0, instance:com.mid_testing_project.services.VisitationServiceNGTest@5cb9f472]" name="cleanTables" is-config="true" duration-ms="67" started-at="2021-04-12T12:12:43 CAT" finished-at="2021-04-12T12:12:43 CAT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanTables -->
-      </class> <!-- com.mid_testing_project.services.VisitationServiceNGTest -->
+      </class> <!-- com.mid_testing_project.services.VisitationTimeServiceNGTest -->
     </test> <!-- Command line test -->
-  </suite> <!-- com.mid_testing_project.services.VisitationServiceNGTest -->
+  </suite> <!-- com.mid_testing_project.services.VisitationTimeServiceNGTest -->
 </testng-results>

@@ -5,8 +5,11 @@
  */
 package com.mid_testing_project.dao;
 
+import com.mid_testing_project.domain.Prison;
 import com.mid_testing_project.interfaces.UserRepositoryInterface;
 import com.mid_testing_project.domain.User;
+import com.mid_testing_project.domain.UserRole;
+import com.mid_testing_project.domain.UserWorkingStatus;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -66,7 +69,7 @@ public class UserDao implements UserRepositoryInterface<User> {
             Root<User> root = query.from(User.class);
             query.select(root);
             Query<User> q = session.createQuery(query);
-            
+
             staffs = q.list();
             session.close();
         } catch (HibernateException e) {
@@ -98,6 +101,43 @@ public class UserDao implements UserRepositoryInterface<User> {
         }
         return staff;
 
+    }
+
+    @Override
+    public Set<User> findStaffByStaffRole(UserRole role, UserWorkingStatus status) {
+        List<User> users = new ArrayList<>();
+        try {
+            session = HibernateUtilities.getSessionFactory().openSession();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<User> query = builder.createQuery(User.class);
+            Root<User> root = query.from(User.class);
+            query.select(root).where(builder.and(builder.equal(root.get("staffRole"), role),
+                                                builder.equal(root.get("staffWorkingStatus"), status)));
+            Query<User> q = session.createQuery(query);
+            users = q.list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new HashSet<>(users);
+    }
+
+    @Override
+    public Set<User> findStaffByStaffRoleInCertainPrison(UserRole role, UserWorkingStatus status, Prison prison) {
+        List<User> users = new ArrayList<>();
+        try {
+            session = HibernateUtilities.getSessionFactory().openSession();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<User> query = builder.createQuery(User.class);
+            Root<User> root = query.from(User.class);
+            query.select(root).where(builder.and(builder.equal(root.get("staffRole"), role),
+                                                builder.equal(root.get("staffWorkingStatus"), status),
+                                                builder.equal(root.get("prison"), prison)));
+            Query<User> q = session.createQuery(query);
+            users = q.list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new HashSet<>(users);
     }
 
 }

@@ -131,4 +131,13 @@ public class AdminService {
         Prison p = (Prison) prisonDao.save(prison);
         return p;
     }
+    public Set<User> findAllActiveManagers(){
+        return adminDao.findStaffByStaffRole(UserRole.MANAGER, UserWorkingStatus.ACTIVATED);
+    }
+    public Set<User> findAllFiredManagers(){
+        return adminDao.findStaffByStaffRole(UserRole.MANAGER, UserWorkingStatus.FIRED);
+    }
+    public Set<User> findAllSuspendedManagers(){
+        return adminDao.findStaffByStaffRole(UserRole.MANAGER, UserWorkingStatus.SUSPENDED);
+    }
 }

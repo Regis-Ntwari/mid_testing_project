@@ -75,9 +75,9 @@ public class CommonOperations {
                                                     .build(),
                                                     Operations.insertInto("VISITATIONTIME")
                                                     .columns("ID", "VISITSTARTTIME", "VISITENDTIME", 
-                                                            "VISITATIONDAY", "VISITATIONTIMESTATUS", "VERSION")
-                                                    .values("V-01", "08:00", "22:00", "MONDAY", "IN_USE", "1")
-                                                    .values("V-02", "09:00", "16:00", "FRIDAY", "NOT_IN_USE", "1")
+                                                            "VISITATIONDAY", "VISITATIONTIMESTATUS","PRISON_ID", "VERSION")
+                                                    .values("V-01", "08:00", "22:00", "MONDAY", "IN_USE","PR-01", "1")
+                                                    .values("V-02", "09:00", "16:00", "FRIDAY", "NOT_IN_USE","PR-01", "1")
                                                     .build(),
                                                     Operations.insertInto("VISITATION")
                                                     .columns("VISITORFIRSTNAME", "VISITORLASTNAME", 

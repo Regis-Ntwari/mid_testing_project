@@ -22,6 +22,7 @@ import com.mid_testing_project.exceptions.NotStaffException;
 import com.mid_testing_project.interfaces.RepositoryInterface;
 import com.mid_testing_project.interfaces.UserRepositoryInterface;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 /**
  *
@@ -102,5 +103,17 @@ public class ManagerService {
         staffDao.update(staff);
         statusDao.save(new UserStatus(manager, staff, comment, LocalDateTime.now(), staff.getStaffRole(), staff.getStaffWorkingStatus()));
         return staff;
+    }
+    public Set<User> findAllActiveGuards(String prisonId){
+        Prison prison = (Prison) prisonDao.findById(prisonId);
+        return staffDao.findStaffByStaffRoleInCertainPrison(UserRole.GUARD, UserWorkingStatus.ACTIVATED, prison);
+    }
+    public Set<User> findAllFiredGuards(String prisonId){
+        Prison prison = (Prison) prisonDao.findById(prisonId);
+        return staffDao.findStaffByStaffRoleInCertainPrison(UserRole.GUARD, UserWorkingStatus.FIRED, prison);
+    }
+    public Set<User> findAllSuspendedGuards(String prisonId){
+        Prison prison = (Prison) prisonDao.findById(prisonId);
+        return staffDao.findStaffByStaffRoleInCertainPrison(UserRole.GUARD, UserWorkingStatus.SUSPENDED, prison);
     }
 }

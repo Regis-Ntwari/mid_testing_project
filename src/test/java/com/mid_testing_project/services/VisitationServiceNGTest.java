@@ -60,16 +60,16 @@ public class VisitationServiceNGTest {
         visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"),
                 "P-22");
     }
-//    @Test(expectedExceptions = OutOfBoundsVisitationTimeException.class)
-//    public void testVisitOutOfBoundsVisitation(){
-//        visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"), 
-//                "P-04");
-//    }
-//    @Test(expectedExceptions = InvalidVisitationDateException.class)
-//    public void testVisitNotVisitationDay(){
-//        visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"), 
-//                "P-04");
-//    }
+    @Test(expectedExceptions = OutOfBoundsVisitationTimeException.class)
+    public void testVisitOutOfBoundsVisitation(){
+        visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"), 
+                "P-04");
+    }
+    @Test(expectedExceptions = InvalidVisitationDateException.class)
+    public void testVisitNotVisitationDay(){
+        visitationService.visit(new Visitor("Tony", "Langton", "0789765432", "tony@gmail.com"), 
+                "P-04");
+    }
 
     @Test
     public void testFindAllVisitations() {

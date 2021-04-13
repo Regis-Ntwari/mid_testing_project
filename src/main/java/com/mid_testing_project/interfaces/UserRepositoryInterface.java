@@ -5,6 +5,11 @@
  */
 package com.mid_testing_project.interfaces;
 
+import com.mid_testing_project.domain.Prison;
+import com.mid_testing_project.domain.UserRole;
+import com.mid_testing_project.domain.UserWorkingStatus;
+import java.util.Set;
+
 
 /**
  *
@@ -13,5 +18,6 @@ package com.mid_testing_project.interfaces;
  */
 public interface UserRepositoryInterface<T> extends RepositoryInterface<T>{
     T findByUsername(String username);
-
+    Set<T> findStaffByStaffRole(UserRole role, UserWorkingStatus status);
+    Set<T> findStaffByStaffRoleInCertainPrison(UserRole role, UserWorkingStatus status, Prison prison);
 }

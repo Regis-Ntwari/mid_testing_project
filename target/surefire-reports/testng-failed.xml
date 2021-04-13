@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [com.mid_testing_project.services.VisitationServiceNGTest]">
+<suite verbose="0" name="Failed suite [com.mid_testing_project.services.VisitationTimeServiceNGTest]">
   <test thread-count="5" verbose="0" name="Command line test(failed)">
     <classes>
-      <class name="com.mid_testing_project.services.VisitationServiceNGTest">
+      <class name="com.mid_testing_project.services.VisitationTimeServiceNGTest">
         <methods>
-          <include name="initializeDatabase"/>
-          <include name="testVisit"/>
-          <include name="cleanTables"/>
           <include name="populateTables"/>
+          <include name="testDisableVisitationTime"/>
+          <include name="testFindAllInUseTime"/>
+          <include name="testFindAllNotInUseTime"/>
+          <include name="testAddVisitationTime"/>
+          <include name="testDisableVisitationTimeAlreadyDisabled"/>
+          <include name="testDisableVisitationTimeInvalidTimeId"/>
+          <include name="cleanTables"/>
+          <include name="initializeDatabase"/>
         </methods>
-      </class> <!-- com.mid_testing_project.services.VisitationServiceNGTest -->
+      </class> <!-- com.mid_testing_project.services.VisitationTimeServiceNGTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
-</suite> <!-- Failed suite [com.mid_testing_project.services.VisitationServiceNGTest] -->
+</suite> <!-- Failed suite [com.mid_testing_project.services.VisitationTimeServiceNGTest] -->

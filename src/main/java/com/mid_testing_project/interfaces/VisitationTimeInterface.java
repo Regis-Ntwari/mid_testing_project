@@ -5,6 +5,7 @@
  */
 package com.mid_testing_project.interfaces;
 
+import com.mid_testing_project.domain.Prison;
 import java.util.Set;
 
 /**
@@ -13,6 +14,6 @@ import java.util.Set;
  * @param <T>
  */
 public interface VisitationTimeInterface<T> extends RepositoryInterface<T> {
-    T findByInUseTime();
-    Set<T> findNotInUseTime();
+    T findByInUseTime(Prison prison);
+    Set<T> findNotInUseTime(Prison prison);
 }

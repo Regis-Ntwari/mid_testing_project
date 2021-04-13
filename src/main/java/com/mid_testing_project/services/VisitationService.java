@@ -41,7 +41,7 @@ public class VisitationService {
     public Visitation visit(Visitor visitor,
             String prisonerId) {
         Prisoner prisoner = (Prisoner) prisonerDao.findById(prisonerId);
-        VisitationTime time = (VisitationTime) visitationTimeDao.findByInUseTime();
+        VisitationTime time = (VisitationTime) visitationTimeDao.findByInUseTime(prisoner.getPrison());
         if (prisoner == null) {
             throw new InvalidPrisonerException("prisoner does not exist");
         }
@@ -49,9 +49,9 @@ public class VisitationService {
                 LocalDate.now().toString() + "T" + time.getVisitStartTime());
         LocalDateTime endTime = LocalDateTime.parse(
                 LocalDate.now().toString() + "T" + time.getVisitEndTime());
-//        if (!LocalDate.now().getDayOfWeek().toString().equals(time.getVisitationDay())) {
-//            throw new InvalidVisitationDateException("date is not enabled");
-//        }
+        if (!LocalDate.now().getDayOfWeek().toString().equals(time.getVisitationDay())) {
+            throw new InvalidVisitationDateException("date is not enabled");
+        }
         if (LocalDateTime.now().isAfter(endTime) || LocalDateTime.now().isBefore(startTime)) {
             throw new OutOfBoundsVisitationTimeException("time is out of boundaries");
         }

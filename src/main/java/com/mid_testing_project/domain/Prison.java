@@ -30,6 +30,8 @@ public class Prison implements Serializable{
     private List<User> staff = new ArrayList<>();
     @OneToMany(mappedBy = "prison")
     private List<Prisoner> prisoners = new ArrayList<>();
+    @OneToMany(mappedBy = "prison")
+    private List<VisitationTime> visitationTime = new ArrayList<>();
     @Version
     private long version = 1;
 
@@ -75,6 +77,13 @@ public class Prison implements Serializable{
     public void setVersion(long version) {
         this.version = version;
     }
-    
+
+    public List<VisitationTime> getVisitationTime() {
+        return visitationTime;
+    }
+
+    public void setVisitationTime(List<VisitationTime> visitationTime) {
+        this.visitationTime = visitationTime;
+    }
     
 }

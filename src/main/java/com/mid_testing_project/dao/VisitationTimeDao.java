@@ -5,6 +5,7 @@
  */
 package com.mid_testing_project.dao;
 
+import com.mid_testing_project.domain.Prison;
 import com.mid_testing_project.interfaces.VisitationTimeInterface;
 import com.mid_testing_project.domain.VisitationTime;
 import com.mid_testing_project.domain.VisitationTimeStatus;
@@ -77,13 +78,15 @@ public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime
     }
 
     @Override
-    public VisitationTime findByInUseTime() {
+    public VisitationTime findByInUseTime(Prison prison) {
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
         Root<VisitationTime> root = query.from(VisitationTime.class);
         
-        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), VisitationTimeStatus.IN_USE));
+        query.select(root).where(builder.and(
+                builder.equal(root.get("visitationTimeStatus"), VisitationTimeStatus.IN_USE),
+                builder.equal(root.get("prison"), prison)));
         
         VisitationTime time = session.createQuery(query).getSingleResult();
         session.close();
@@ -91,13 +94,15 @@ public class VisitationTimeDao implements VisitationTimeInterface<VisitationTime
     }
 
     @Override
-    public Set<VisitationTime> findNotInUseTime() {
+    public Set<VisitationTime> findNotInUseTime(Prison prison) {
         session = HibernateUtilities.getSessionFactory().openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<VisitationTime> query = builder.createQuery(VisitationTime.class);
         Root<VisitationTime> root = query.from(VisitationTime.class);
         
-        query.select(root).where(builder.equal(root.get("visitationTimeStatus"), VisitationTimeStatus.IN_USE));
+        query.select(root).where(builder.and(
+                builder.equal(root.get("visitationTimeStatus"), VisitationTimeStatus.NOT_IN_USE),
+                builder.equal(root.get("prison"), prison)));
         
         List<VisitationTime> time = session.createQuery(query).getResultList();
         session.close();

@@ -6,6 +6,8 @@
 package com.mid_testing_project.services;
 
 import com.mid_testing_project.dao.HibernateUtilities;
+import com.mid_testing_project.dao.PrisonDao;
+import com.mid_testing_project.domain.Prison;
 import com.mid_testing_project.domain.VisitationTime;
 import com.mid_testing_project.exceptions.AlreadyNotInUseTimeException;
 import com.mid_testing_project.exceptions.InvalidVisitationTimeException;
@@ -44,10 +46,12 @@ public class VisitationTimeServiceNGTest {
 
     @Test
     public void testAddVisitationTime() {
+        Prison prison = new PrisonDao().findById("PR-01");
         VisitationTime time = new VisitationTime();
         time.setVisitEndTime("17:00");
         time.setVisitStartTime("8:00");
         time.setVisitationDay("MONDAY");
+        time.setPrison(prison);
         VisitationTime times = timeService.addVisitationTime(time);
         Assert.assertEquals(times.getVersion(), 1);
     }
@@ -68,13 +72,13 @@ public class VisitationTimeServiceNGTest {
 
     @Test
     public void testFindAllInUseTime() {
-        VisitationTime times = timeService.findAllInUseTime();
+        VisitationTime times = timeService.findAllInUseTime("PR-01");
         Assert.assertEquals(times.getId(), "V-01");
     }
     
     @Test
     public void testFindAllNotInUseTime(){
-        Set<VisitationTime> times = timeService.findAllNotInUseTime();
+        Set<VisitationTime> times = timeService.findAllNotInUseTime("PR-01");
         Assert.assertEquals(times.size(), 1);
     }
     @AfterMethod

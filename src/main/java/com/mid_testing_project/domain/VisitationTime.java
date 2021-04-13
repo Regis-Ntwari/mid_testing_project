@@ -13,6 +13,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 import org.hibernate.annotations.GenericGenerator;
@@ -35,6 +36,8 @@ public class VisitationTime implements Serializable {
     private List<Visitation> visits = new ArrayList<>();
     @Enumerated(EnumType.STRING)
     private VisitationTimeStatus visitationTimeStatus;
+    @ManyToOne
+    private Prison prison;
     @Version
     private long version = 1;
 
@@ -92,6 +95,14 @@ public class VisitationTime implements Serializable {
 
     public void setVersion(long version) {
         this.version = version;
+    }
+
+    public Prison getPrison() {
+        return prison;
+    }
+
+    public void setPrison(Prison prison) {
+        this.prison = prison;
     }
     
 }

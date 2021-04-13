@@ -5,11 +5,14 @@
  */
 package com.mid_testing_project.services;
 
+import com.mid_testing_project.dao.PrisonDao;
 import com.mid_testing_project.dao.VisitationTimeDao;
+import com.mid_testing_project.domain.Prison;
 import com.mid_testing_project.domain.VisitationTime;
 import com.mid_testing_project.domain.VisitationTimeStatus;
 import com.mid_testing_project.exceptions.AlreadyNotInUseTimeException;
 import com.mid_testing_project.exceptions.InvalidVisitationTimeException;
+import com.mid_testing_project.interfaces.RepositoryInterface;
 import com.mid_testing_project.interfaces.VisitationTimeInterface;
 import java.util.Set;
 
@@ -20,6 +23,7 @@ import java.util.Set;
 public class VisitationTimeService {
 
     private final VisitationTimeInterface timeDao = new VisitationTimeDao();
+    private final RepositoryInterface prisonDao = new PrisonDao();
 
     public VisitationTime addVisitationTime(VisitationTime time) {
         time.setVisitationTimeStatus(VisitationTimeStatus.IN_USE);
@@ -40,10 +44,12 @@ public class VisitationTimeService {
         timeDao.update(time);
         return time;
     }
-    public VisitationTime findAllInUseTime(){
-        return (VisitationTime) timeDao.findByInUseTime();
+    public VisitationTime findAllInUseTime(String prisonId){
+        Prison prison = (Prison) prisonDao.findById(prisonId);
+        return (VisitationTime) timeDao.findByInUseTime(prison);
     }
-    public Set<VisitationTime> findAllNotInUseTime(){
-        return timeDao.findNotInUseTime();
+    public Set<VisitationTime> findAllNotInUseTime(String prisonId){
+        Prison prison = (Prison) prisonDao.findById(prisonId);
+        return timeDao.findNotInUseTime(prison);
     }
 }
